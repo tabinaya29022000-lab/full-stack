@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,::before
+        {
+            margin: 0px;
+            padding:0px;
+            box-sizing: border-box;
+            
+        }
+        nav
+        {
+            background-color: rgb(53, 53, 48);
+            width: 100%;
+            height: 10vh;
+           justify-content: space-around;
+           display: flex;
+
+        }
+        .logo
+        {
+            background-color: red;
+            font-size: 30px;
+            font-weight: 400;
+            margin-left: 40px;
+            width: 300px;
+            height: 100%;   
+            display: flex;
+            /*justify-content: center;*/
+            align-items: center;
+            color: aliceblue;
+
+        }
+        .ul
+        {
+            background-color: blue;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 700px;
+            height: 100%;
+            /*color: aliceblue;*/
+        }
+        .li
+        {
+       background-color: blueviolet;
+        margin-left: 20px;
+        list-style-type: none;
+        padding: 5px 15px;
+        /*color: antiquewhite;*/
+       }
+       .link
+       {
+        background-color: aqua;
+        font-size: 23px;
+        text-decoration: none;
+        color: aliceblue;
+       }
+       .link::before{
+        background-color: green;
+        content:"" ;
+        display: inline-block;
+        width:100%;
+        height:2px;
+        position: absolute;
+        bottom:-10px;
+        width: 0%;
+        transition: all 0.5s linear 0s;
+       }
+       link:hover::before{
+        width: 100%;
+       }
+       @media screen and (max-width:640px) {
+        nav
+        {
+            position: relative;
+        }
+        .ul{
+            position: absolute;
+            margin-top: 10vh;
+            width: 100%;
+            display: block;
+            height: auto;
+            background-color: gray;
+            left:-100%;
+            transition: all 0.5s linear 0s;
+
+        }
+
+       }
+    </style>
+</head>
+<body>
+   <nav>
+    <div class="logo">GFG</div>
+    <ul class="ul">
+        <li class="li"><a href="" class="link">Home</a></li>
+        <li class="li"><a href="" class="link">About</a></li>
+        <li class="li"><a href="" class="link">Services</a></li>
+        <li class="li"><a href="" class="link">Contact</a></li>
+    </ul>
+   </nav> 
+    
+    </div>
+</body>
+</html>

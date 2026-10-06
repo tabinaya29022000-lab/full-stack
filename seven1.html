@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,::before
+        {
+           margin: 0px;
+           padding: 0px;
+           box-sizing: border-box;
+        }
+        nav
+        {
+            background-color: rgb(73, 68, 68);
+            display: flex;
+            justify-content: space-around;
+            width:100%;
+            height:10vh;
+        }
+        .logo
+        {
+            /*background-color: black;*/
+            color: bisque;
+            width:300px;
+            height: 100%;
+            display: flex;
+            /*justify-content: center;*/
+            align-items: center;
+            margin-left: 40px;
+            font-weight: 400;
+            font-size: 30px;
+
+        }
+        .ul
+        {
+            /*background-color: brown;*/
+            padding:5px;
+            color: whitesmoke;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 800px;
+            height: 100%;
+        }
+        .li
+        {
+            /*background-color: gray;*/
+            margin-left: 20px;
+            padding: 5px 15px;
+            list-style-type: none; 
+        }
+        .link
+        {
+            text-decoration: none;
+            color: aliceblue;
+            /*background-color: aqua;*/
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">GFG</div>
+            <ul class="ul">
+                <li class="li"><a href="" class="link">Home</a></li>
+                <li class="li"><a href="" class="link">About</a></li>
+                <li class="li"><a href="" class="link">Services</a></li>
+                <li class="li"><a href="" class="link">Contact</a></li>
+        </ul>
+        </div>
+    </nav>
+</body>
+</html>

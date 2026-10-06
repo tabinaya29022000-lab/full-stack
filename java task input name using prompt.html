@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        form{
+            background-color: rgb(38, 85, 85);
+            width: 300px;
+            height: 350px;
+            margin: 50px auto;
+            box-shadow: inset  0px 4px 6px rgb(59, 15, 219, 0.7), 0px 6px 8px rgb(32, 19, 221, 0.7) ;
+        }
+        .title
+        {
+            font-size: 30px;
+            color: rgb(16, 184, 196);
+            margin: 10px 100px;
+        }
+        .field
+        {
+            /*background-color: brown;*/
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        .submit
+        {
+            margin-left: 20px;
+            width: 250px;
+            border-radius: 10px;
+            background-color: aqua;
+        }
+        #Name, #Age
+        {
+            width: 250px;
+        }
+        .Name, .Age, .Gender
+        {
+            font-size:15px;
+            color: whitesmoke
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <form id="form" action="./first.html" method="get" enctype="multipart/form-data ">
+        <h1 class="title">Form</h1>
+        <div class="field">
+        <label for="" class="Name">Name</label><br><br>
+        <input  type="text" placeholder="vijay" id="Name" required></div><br>
+        <div class="field">
+        <label for="" class="Age" >Age</label><br><br>
+        <input type="number" id="Age" placeholder="24" min="18" max="50"  required></div><br>
+        <div class="field">
+            <label for="" id="Gender" >Gender</label><br><br>
+            
+            <input type="radio" id="male" name="Gender" placeholder="male">
+            <label for="" >Male</label><br>
+            
+            <input type="radio" id="female" name="Gender" placeholder="female">
+            <label for="" >Female</label><br>
+            
+            <input type="radio" id="others" name="Gender" placeholder="others">
+            <label for="" >Others</label>
+        </div><br>
+        <button class="submit">SUBMIT</button>
+    </form>
+    <script>
+        var a=prompt("Name");
+        document.getElementById("Name").value=a;
+        var b=prompt("Age");
+        document.getElementById("Age").value=b;
+    </script>
+</body>
+</html>

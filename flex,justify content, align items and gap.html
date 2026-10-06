@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin:0 px;
+            padding: 0px;
+            box-sizing: border-box;
+
+        }
+        .con
+        {
+            background-color: blueviolet;
+            width: 700px;
+            height:500px;
+            margin:50px auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            /*align-items: start;
+            align-items:center ;
+            align-items: end;
+            flex-wrap: nowrap;
+            flex-wrap: wrap-reverse;
+            flex-direction: row;
+            flex-direction: column;
+            flex-direction: row-reverse;
+            flex-direction: column-reverse;*/
+            
+            
+        }
+        .sub
+        {
+            background-color: aqua;
+            width:150px;
+            height:150px;
+            border:2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+        .one
+        {
+            background-color: blue;
+            order:8;
+         }
+         .two
+         {
+            background-color: yellow;
+            order:7;
+         }
+         .three
+         {
+            background-color: violet;
+            order:6;
+         }
+         .four
+         {
+            background-color: green;
+            order:5;
+         }
+         .five
+         {
+            background-color: palevioletred;
+            order:3;
+         }
+         .six
+         {
+            background-color: olive;
+            order:4;
+         }
+         .seven
+         {
+            background-color: red;
+            order:2;
+         }
+         .eight
+         {
+            background-color: olivedrab;
+            order:1;
+         }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="sub one">one</div>
+        <div class="sub two">two</div>
+        <div class="sub three">three</div>
+        <div class="sub four">four</div>
+        <div class="sub five">five</div>
+        <div class="sub six">six</div>
+        <div class="sub seven">seven</div>
+        <div class="sub eight">eight</div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        button{
+            margin-top: 50px;
+            margin-left: 150px;
+        }
+        img
+        {
+            margin-top: 50px;
+            width: 260px;
+            height: 260px;
+        }
+       
+    </style>
+</head>
+<body>
+    <img  src="./images/light on.jpg" alt="./images/light off.jpg">
+    
+    <p >
+        <button onclick="on()">TurnOn</button>
+        <button onclick="off()">TurnOff</button>
+    </p>
+    
+    <script>
+       
+       function on()
+       {
+        let img=document.getElementById("img");
+        img.src='./images/light on.jpg';
+        console.log(img.src);
+       }
+       
+       function off()
+       {
+        let img=document.getElementById("img");
+       img.src='./images/light off.jpg';       console.log(img.src);       }
+       
+       
+       
+       
+      /* let amount=parseInt(prompt("Enter your amount: "))
+        if (amount>=3000)
+        {
+            let percentage=10;
+            discount=(percentage/100)*(amount);
+            console.log(discount);
+        }
+        else
+        {
+            console.log(amount);
+        }*/
+
+
+
+
+
+
+
+        
+        
+    </script>
+</body>
+</html>

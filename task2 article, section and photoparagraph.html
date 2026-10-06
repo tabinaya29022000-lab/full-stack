@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Document</title>
+    <style>
+        *,
+        *::after,::before
+        {
+            margin: 0px;
+            padding:0px;
+            box-sizing: border-box;
+            
+        }
+        nav
+        {
+            background-color: rgb(53, 53, 48);
+            width: 100%;
+            height: 10vh;
+           justify-content: space-around;
+           display: flex;
+           align-items: center;
+           position: relative;
+
+        }
+        .logo
+        {
+            /*background-color: red;*/
+            font-size: 30px;
+            font-weight: 400;
+            margin-left: 40px;
+            width: 300px;
+            height: 100%;   
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+
+        }
+        .ul
+        {
+            /*background-color: blue;*/
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 700px;
+            height: 100%;
+            /*color: aliceblue;*/
+        }
+        .li
+        {
+       /*background-color: blueviolet;*/
+        margin-left: 20px;
+        list-style-type: none;
+        padding: 5px 15px;
+        color: antiquewhite;
+       }
+       .link
+       {
+        /*background-color: aqua;*/
+        font-size: 23px;
+        text-decoration: none;
+        color: aliceblue;
+        position: relative;
+       }
+       .link::before{
+        /*background-color: gold;*/
+        content:"" ;
+        display: inline-block;
+        width:100%;
+        height:2px;
+        position: absolute;
+        bottom:-10px;
+        width: 0%;
+        transition: all 0.5s linear 0s;
+       }
+       .link:hover::before{
+        width: 100%;
+       }
+       span{
+       /* background-color: black;*/
+        /*width:100%;
+        height:100%;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+       }
+       img{
+        width:30px;
+        height:30px;
+
+       }
+       .menu-icon{
+        display: block;
+        font-size: 36px;
+        cursor:pointer;
+        color: aliceblue;
+       }
+       .main
+       {
+        background-color: blueviolet;
+        margin:auto;
+        height:75vh;
+        width:100%;
+        display:flex;
+        padding: 20px;
+        border:2px solid violet;
+       }
+       article
+       {
+        font-size: 25px;
+        height:100%;
+        width:50%;
+        text-shadow: 2px -2px 2px gray;
+        padding: 10px;
+        border-right: 2px solid black;
+        }
+        section
+        {
+            height:100%;
+            width:50%;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+      #MahtmaGandhi
+      {
+            width:300px;
+            height:300px;
+            box-shadow: 10px -10px 10px 10px gray;
+      }
+       @media screen and (max-width:640px) {
+        nav
+        {
+            position: relative;
+        }
+        .logo{
+            margin-left: 10px;
+            justify-content: center;
+            
+        }
+        .ul{
+            position: absolute;
+            top: 10vh;
+            width: 100%;
+            display: block;
+            height: auto;
+            background-color: gray;
+            left:auto;
+            transition: all 0.5s linear 0s;
+            margin-top: 0;
+
+        }
+        .li{
+            text-align: left;
+        }
+        span{
+            color: aliceblue;
+            font-size: 32px;
+            display: flex;
+        }
+        .logo{
+            width:auto;
+            justify-content: start;
+
+        }
+        .menu-icon{
+            display: block;
+    }
+        @media screen and (max-width:823px)
+        {
+            .main
+            {
+                width:100%;
+            }
+            #MathmaGandhi
+            {
+                display: block;
+            }
+            
+        }
+
+       }
+    </style>
+            
+        
+    </style>
+</head>
+<body>
+    <nav>
+    <div class="logo">GFG</div>
+    <ul class="ul">
+        <li class="li"><a href="" class="link">Home</a></li>
+        <li class="li"><a href="" class="link">About</a></li>
+        <li class="li"><a href="" class="link">Services</a></li>
+        <li class="li"><a href="" class="link">Contact</a></li>
+    </ul>
+    <span class="menu-icon"><i class="fa-solid fa-bars" onclick = "toggle()"></i></span>
+     </nav>
+        <script>
+            let toggled = false;
+            function toggle(){
+                if(!toggled){
+                    toggled = true;
+                    document.getElementById("ul").style.left = "0%";
+                    return
+                }
+                if(toggled){
+                    toggled = false;
+                 
+                    document.getElementById("ul").style.left = "-100%";
+                      return
+                }
+            }
+
+        </script>
+        <main class="main">
+        <article>Born and raised in a Hindu family in coastal Gujarat, Gandhi was trained in the law at the Inner Temple in London and was called to the bar at the age of 22. After two uncertain years in India, where he was unable to start a successful law practice, Gandhi moved to South Africa in 1893 to represent an Indian merchant in a lawsuit. He went on to live in South Africa for the next 21 years. Here, Gandhi raised a family and first employed nonviolent resistance in a campaign for civil rights. In 1915, aged 45, he returned to India and soon set about organising peasants, farmers, and urban labourers to protest against discrimination and excessive land tax.</article>
+        <section><img src="./Mahatma-Gandhi.webp" alt="" id="MahtmaGandhi"></section>
+    </main>
+    
+
+</body>
+</html>

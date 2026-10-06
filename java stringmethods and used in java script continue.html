@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        let name="Abinaya";
+        console.log(name.toUpperCase("name"));
+        console.log(name.toLowerCase("name"));
+
+        let name1="    Abinaya Vijay   "
+        console.log(name1.trim("name1"));
+        console.log(name1.trimStart("name1"));
+        console.log(name1.trimEnd("name1"));
+
+        let name2= "I am Abinaya I am from Thirumangalam";
+        console.log(name2.replace("I","you"));                      //replace(string,changestring)
+        console.log(name2.replaceAll("I","you"));
+
+        const fruits=["apple", "orange", "grapes"];
+        console.log(fruits.slice(0,1));           //starts index include and end index exclude
+        console.log(fruits.slice(0));              //slice(start,end)
+
+        text="thirumangalam"
+        console.log(text.charAt(1));              //charat is only positive index
+        console.log(text.at(-2));                  //at is positive and negative index
+
+        text1= "I am Abinaya I am from Thirumangalam";
+        console.log(text1.includes("Abinaya"));             //true if it is include
+
+        text2="thirumangalam"
+        console.log(text2.indexOf("h"));  
+        console.log(text2.lastIndexOf(""));  
+
+         text3="thirumangalam"
+         console.log(text3.startsWith("t"))
+         console.log(text3.startsWith("n"))
+
+         text4="this is my dream";
+         console.log(text4.split(" "));
+         
+         text5="this is my dream";
+         console.log(text5.match(/dream/))
+
+
+
+         string="i am abinaya i am from madurai";
+         console.log(string.substring(0,5));
+         console.log(string.substring(5,-2));
+
+
+
+
+
+
+
+
+
+        
+    </script>
+     
+</body>
+</html>

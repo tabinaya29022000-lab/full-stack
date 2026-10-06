@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            
+        }
+        h1{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">Heading</h1>
+    <script>
+        var a=prompt();
+        console.log(a);
+        var head=document.getElementById("head")
+        head.innerHTML=a;
+        head.style.backgroundColor=a;
+        
+    </script>
+    
+    <!--<script>
+        var head=document.getElementById('head');
+        alert(head);
+        console.log(head);
+        document.write(head);
+        alert(head.innerHTML);
+        console.log(head.innerHTML);
+        document.write(head.innerHTML);
+        
+        head.onclick=()=>{
+            alert("hi")
+            head.innerHTML="abinaya"
+            head.style.backgroundColor="red"
+            
+        }
+        
+    </script>-->
+</body>
+</html>

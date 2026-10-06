@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container
+        {
+            background-color: aqua;
+            
+            height:150px;
+            border: 2px solid black;
+            margin-bottom: 30px;
+            display: flex;
+           overflow: auto;
+        }
+        .safe
+        {
+           align-items: safe center;
+        }
+        .unsafe
+        {
+           align-items: unsafe center;
+        }
+        .content{
+            width: 100%;
+            background-color: blueviolet;
+            padding: 10px;
+            min-height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <p>Safe Center</p>
+    <div class="container safe">
+        <div class="content"></div>
+    </div>
+
+    <p>Unsafe Center</p>
+    <div class="container unsafe">
+        <div class="content"></div>
+    </div>
+</body>
+</html>

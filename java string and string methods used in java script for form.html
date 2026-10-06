@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .con
+    {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+   </style>
+</head>
+<body>
+    
+     <form action="">
+            <label for="">UserName</label>
+            <input type="text" id="username" value=""><br>
+            <label for="">Email</label>
+            <input type="email" id="email" value=""><br>
+            <label for="">Password</label>
+            <input type="password" id="password" value=""><br>
+            <label for="" id="gender" >Gender</label><br>
+            <label for="">Male</label>
+            <input type="radio" class="gender" name="gender" value="male"><br>
+            <label for="">Female</label>
+            <input type="radio" class="gender" name="gender" value="female"><br>
+            <label for="">Others</label>
+            <input type="radio" class="gender" name="gender" value="others"><br>
+
+        </form>
+        <input type="submit" value="submit" onclick="validation()">
+        <!--<div class="con" id="con" >con</div>-->
+        
+    <script>
+        function validation()
+            {
+                let username=document.getElementById("username").value;
+                let email=document.getElementById("email").value;
+                let password=document.getElementById("password").value;
+                
+                console.log(username);
+                console.log(email);
+                console.log("*".repeat(password.length));
+                
+                let gender = document.querySelector('input[name="gender"]:checked');
+                console.log(gender.value);
+            }   
+            
+            
+                
+           const fruits=["apple","mango","banana","pear","orange"] 
+           slice=fruits.slice(1,3);   //slice(start,end) start index include End index is not include//
+           slice=fruits.slice(2);                         
+           slice=fruits.slice(4);
+           console.log(slice)
+        
+        /*function validation()
+        {
+            let color=document.getElementById("username") .value;  
+            document.getElementById("con").style.backgroundColor=color;  
+              
+         }
+        let name="abi"
+        {
+        console.log(typeof(name))
+        }
+        let name1='abi'
+        {
+        console.log(typeof(name1))                              //console typeof and length and concation//
+        }
+        let name2=prompt("Enter any number : ")
+        {
+            console.log(name2);
+        }
+        let fname="Abi"
+        lname="naya"
+        {
+            console.log((fname+lname).toUpperCase())
+            console.log(fname.length+lname.length)
+            console.log(fname.length<lname.length)
+            console.log(fname.concat(lname))
+        }   */
+
+
+        
+
+    </script>
+</body>
+</html>

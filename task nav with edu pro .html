@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            width: 100%;
+            height: 10vh;
+            background-color: aqua;
+            display: flex;
+        }
+
+        .edupro {
+            width: 250px;
+            height: 100%;
+            background-color: rgb(104, 39, 224);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .edupro span {
+            font-size: 30px;
+            font-weight: 600;
+            margin-left: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .ul {
+            background-color: rgb(18, 185, 18);
+            width: 600px;
+            height: 100%;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .menu-icon{
+        display: block;
+        font-size: 36px;
+        cursor:pointer;
+        color: aliceblue;
+       }
+       
+
+        .ul>li {
+            /* background-color: grey; */
+            /* border:1px solid black; */
+            list-style-type: none;
+            padding: 15px 20px;
+        }
+
+        .link {
+            /* background-color:blue; */
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+
+        }
+        .menubar
+        {
+            margin-top: 5px;
+        }
+
+        .requestcon {
+            width: 300px;
+            height: 100%;
+            background-color: blueviolet;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-left: auto;
+        }
+
+        .requestcon>i {
+            width: 50px;
+            height: 50px;
+            margin-top: 30px;
+        }
+
+        .requestcon>button {
+            background-color: rgb(93, 12, 223);
+            width: 100px;
+            height: 30px;
+            margin-right: 100px;
+            font-weight: 900;
+        }
+
+        .hero-section {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .herocontent {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: start;
+            gap: 20px;
+            width: 50%;
+            padding: 20px 40px;
+            margin: 10px 30px;
+        }
+
+        .sub-heading {
+            color: #006bff;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .heading {
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 1.1;
+            word-spacing: 5px;
+
+        }
+
+        .description {
+            font-size: 23px;
+            line-height: 1.4;
+            word-spacing: 5px;
+        }
+
+        .btn1 {
+            background-color: #006bff;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid #006bff;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .btn2 {
+            background-color: aliceblue;
+            color: #006bff;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid #006bff;
+            font-size: 18px;
+        }
+
+        .heroimg {
+            margin: auto;
+
+        }
+
+        .heroimg>img {
+            width: 300px;
+            height: 100%;
+
+        }
+
+        @media screen and (max-width: 768px) 
+        {
+            nav {
+                position: relative;
+                z-index: 10;
+            }
+            .ul {
+                position: absolute;
+
+                top: 70px;
+                left: 0px;
+
+                width: 100%;
+                height: 0px;
+
+                background-color: rgb(22, 152, 212);
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                padding: 0px;
+
+                overflow: hidden;
+
+                transition: height 2s ease;
+
+                z-index: 10;
+            }
+             .ul > li {
+                padding: 10px;
+            }
+            .requestcon {
+                display: none;
+            }
+            .hero-section {
+                flex-direction: column;
+                position: relative;
+                z-index: 1;
+            }
+             .herocontent {
+                width: 100%;
+                margin: 10px;
+                padding: 20px;
+            }
+            .heading {
+                font-size: 35px;
+            }
+
+            .heroimg {
+                width: 100%;
+                text-align: center;
+            }
+
+            .heroimg > img {
+                width: 250px;
+            }
+        
+        }
+
+           
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="edupro">
+            <h1><i class="fa-solid fa-graduation-cap"></i></h1>
+            <span>EduPro</span>
+        </div>
+        <span class="menubar"><i  class="fa-solid fa-bars" onclick = "toggle()" ></i></span>
+        <ul class="ul" id="ul">
+            <li><a href="" class="link">Home</a></li>
+            <li><a href="" class="link">About</a></li>
+            <li><a href="" class="link">Course</a></li>
+            <li><a href="" class="link">Blog</a></li>
+            <li><a href="" class="link">Contact</a></li>
+        </ul>
+        
+        <div class="requestcon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <button>Get Started</button>
+        </div>
+    </nav>
+    <section class="hero-section">
+        <div class="herocontent">
+            <h3 class="sub-heading">LEARN ANYTHING, ANYWHERE</h3>
+            <h1 class="heading">Build Your Future With Better Learning</h1>
+            <p class="description">Join thousands of students and learn new skills with our expert insturctors.</p>
+            <div class="hero buttoncon">
+                <button class="btn1">Explore Courses</button>
+                <button class="btn2">Watch Video</button>
+            </div>
+        </div>
+        <div class="heroimg">
+            <img src="./images/edupro mg.jpg" />
+        </div>
+
+    </section>
+    <script>
+            let toggled = false;
+            function toggle(){
+                if(!toggled){
+                    toggled = true;
+                    document.getElementById("ul").style.height = "230px";
+                    return;
+                }
+                if(toggled){
+                    toggled = false;
+                 
+                    document.getElementById("ul").style.height = "0px";
+                      return;
+                }
+            }
+    </script>        
+</body>
+
+</html>

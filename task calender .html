@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .calender
+    {
+        background-color: aqua;
+        width: 1100px;
+        min-height: 100vh;
+        margin: 50px auto;
+        padding:40px;
+        border: 15px solid grey;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap:40px;
+        box-sizing: border-box;
+    }
+    .jan,.feb,.mar,.apr,.may,.jun,.jul,.aug,.sep,.oct,.nov,.dec
+    {
+        background-color: rgb(48, 202, 117);
+        width:290px;
+        height:290px;
+        border:2px solid black;
+        /* display: flex;
+        flex-direction: row; */
+        font-size: 20px;
+        font-weight: 900;
+        text-align: center;
+    }
+    table{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    tr,th,td
+    {
+        padding: 7px;
+    }
+    #jantable tr th{
+        background-color: rgba(102, 102, 204);
+    }
+    #febtable tr th{
+        background-color: rgba(238, 238, 85);
+    }
+    #martable tr th{
+        background-color: rgba(58, 243, 248);
+    }
+    #aprtable tr th{
+        background-color: rgba(58, 243, 248);
+    }
+    #maytable tr th{
+        background-color: rgba(220, 97, 237);
+    }
+    #juntable tr th{
+        background-color: rgba(255, 153, 204);
+    }
+    #jultable tr th{
+        background-color: rgba(153, 153, 255);
+    }
+    #augtable tr th{
+        background-color: rgba(0, 102, 255);
+    }
+    #septable tr th{
+        background-color : rgba(240, 188, 138);
+    }
+    #octtable tr th{
+        background-color: rgba(255, 102, 153);
+    }
+    #novtable tr th{
+        background-color:rgba(102, 255, 102);
+    }
+    #dectable tr th{
+        background-color: rgba(204, 0, 255);
+    }
+    td:nth-child(1){
+        color: red;
+    }
+    @media screen and (max-width:768px),screen and (max-width:480px)
+    {
+        .calender{
+            width:100%;
+            max-width: 320px;
+            margin: 0 auto;
+            font-size: 12px;
+            padding: 5px;
+
+        }
+        .jan,.feb,.mar,.apr,.may,.jun,.jul,.aug,.sep,.oct,.nov,.dec
+        {
+            width:100%;
+            
+
+        } 
+    }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="calender">
+        <div class="jan">JANUARY
+        <table id="jantable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td>
+            </tr>
+             <tr>
+                <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+            </tr>
+            <tr>
+                <td>1</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+            </tr>
+            <tr>
+                <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+            </tr>
+            <tr>
+                <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+            </tr>
+            <tr>
+                <td>31</td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>    
+        </div>
+        <div class="feb">FEBRUARY
+            <table id="febtable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+            </tr>
+             <tr>
+                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+            </tr>
+            <tr>
+                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+            </tr>
+            <tr>
+                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+            </tr>
+            <tr>
+                <td>28</td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>    
+        </div>
+        <div class="mar">MARCH
+            <table id="martable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+            </tr>
+             <tr>
+                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+            </tr>
+            <tr>
+                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+            </tr>
+            <tr>
+                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+            </tr>
+            <tr>
+                <td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+            </tr>
+        </table>    
+        </div>
+        <div class="apr">APRIL
+            <table id="aprtable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+            </tr>
+             <tr>
+                <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+            </tr>
+            <tr>
+                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+            </tr>
+            <tr>
+                <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+            </tr>
+            <tr>
+                <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td>
+            </tr>
+        </table>    
+        </div>
+        <div class="may">MAY
+            <table id="maytable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
+            </tr>
+             <tr>
+                <td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+            </tr>
+            <tr>
+                <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+            </tr>
+            <tr>
+                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+            </tr>
+            <tr>
+                <td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+            </tr>
+            <tr>
+                <td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>    
+        </div>
+        <div class="jun">JUNE
+            <table id="juntable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+            </tr>
+             <tr>
+                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+            </tr>
+            <tr>
+                <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+            </tr>
+            <tr>
+                <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+            </tr>
+            <tr>
+                <td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td>
+            </tr>
+        </table>    
+
+        </div>
+        <div class="jul">JULY
+        <table id="jultable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+            </tr>
+             <tr>
+                <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+            </tr>
+            <tr>
+                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+            </tr>
+            <tr>
+                <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+            </tr>
+            <tr>
+                <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+            </tr>
+        </table>
+        </div>
+        <div class="aug">AUGUST
+            <table id="augtable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+             <tr>
+                <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+            </tr>
+            <tr>
+                <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+            </tr>
+            <tr>
+                <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+            </tr>
+            <tr>
+                <td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>    
+
+        </div>
+        <div class="sep">SEPTEMBER
+            <table id="septable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+            </tr>
+             <tr>
+                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+            </tr>
+            <tr>
+                <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+            </tr>
+            <tr>
+                <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+            </tr>
+            <tr>
+                <td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td>
+            </tr>
+        </table>    
+        </div>
+        <div class="oct">OCTOBER
+            <table id="octtable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td>
+            </tr>
+             <tr>
+                <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+            </tr>
+            <tr>
+                <td>1</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+            </tr>
+            <tr>
+                <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+            </tr>
+            <tr>
+                <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+            </tr>
+        </table>    
+        </div>
+        <div class="nov">NOVEMBER
+            <table id="novtable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
+            </tr>
+             <tr>
+                <td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+            </tr>
+            <tr>
+                <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+            </tr>
+            <tr>
+                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+            </tr>
+            <tr>
+                <td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+            </tr>
+            <tr>
+                <td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>    
+        </div>
+        <div class="dec">DECEMBER
+            <table id="dectable">
+            <tr >
+                <th >S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+            </tr>
+             <tr>
+                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+            </tr>
+            <tr>
+                <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+            </tr>
+            <tr>
+                <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+            </tr>
+            <tr>
+                <td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td>
+            </tr>
+        </table>    
+        </div>
+    </div>
+    
+</body>
+</html>

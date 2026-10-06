@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .main{
+            background-color: orange;
+            width: 1200px;
+            margin: 50px auto;
+        }
+
+
+        nav {
+            width: 100%;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        header {
+            width:100%;
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        .main-content {
+            background-color: aqua;
+            width: 800px;
+            margin: 20px auto;
+            display: flex;
+
+        }
+
+   
+        .left-content {
+            width: 60%;
+            background-color: #eee;
+            padding: 20px;
+        }
+
+        .right-content {
+            width: 40%;
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+     
+        .left-sub-container {
+            /*background-color: olive;*/
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+            
+        }
+
+        .sub-box {
+            width: 280px;
+            height: 150px;
+            background-color: coral;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .right-sub-box {
+            width: 200px;
+            height: 150px;
+            background-color: lightgreen;
+            margin: auto;
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #222;
+            
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        @media screen and (max-width:360px){
+            .main-content
+            {
+                display: block;
+                
+            }
+            .left-sub-container
+            {
+                display: block;
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+      <div class="main">
+      <nav>
+          Navigation
+    </nav>
+
+
+    <header>
+        Header
+    </header>
+
+
+    <main class="main-content">
+
+        <section class="left-content">
+
+            Left Content
+
+            <div class="left-sub-container">
+
+                <div class="sub-box">
+                    Sub Content 1
+                </div>
+
+                <div class="sub-box">
+                    Sub Content 2
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="right-content">
+
+
+            <div class="right-sub-box">
+                Sub Content
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Footer
+    </footer>
+    </div>
+
+
+</body>
+</html>    
+            
+
+       
+
+    
+
+   
+
+    

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        .main
+        {
+            background-image: linear-gradient(to bottom, rgba(2, 65, 72),rgba(5, 95, 57));
+            width:35%;
+            height:590px;
+            margin:50px auto;
+            margin-top: 10px;
+        }
+        .con1
+        {
+            width:100%;
+            height:25%;
+            background-color: aqua;
+            display: block;
+        }
+        img
+        {
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            margin:20px auto;
+            margin-left: 200px;
+            margin-top: 20px;
+
+        }
+        h1{
+            font-size: 25px;
+            margin-left: 100px;
+            color: aliceblue;
+          }
+        .con2
+        {
+            width:90%;
+            height:75%;
+            background-color: blueviolet;
+            margin: auto;
+            padding: 20px;
+
+            /*display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;  
+            margin-left: -25px;*/
+        }
+        input
+        {
+            border-radius: 20px;
+            width:100%;
+            border: none;
+            outline: none;
+            padding:10px 10px;
+            background-color: rgba(13, 107, 106);
+            font-size: 16px;
+        }
+        label
+        {
+            display: block;
+            color: aliceblue;
+            font-weight: 600;
+            padding: 5px;
+        }
+        button{
+            width:100%;
+            border-radius: 10px;
+            background-color: yellow;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 10px;
+        }
+        #xbar
+        {
+            background-color: red;
+            margin-left: 446px ;
+            width: 25px;
+            height: 25px;
+        }
+        
+
+        
+        @media screen and (max-width:768px){
+            .main {
+                width: 90%;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <form  id="form" method="get"  action="./first.html" enctype="multipart/form-data">
+    <div class="main" >
+        <div class="con1" >
+            <i  id="xbar" class="fa-solid fa-xmark" onclick="document.getElementById('form') .style.display='none' "></i>
+            <img src="./images/worker man emoji.jpg" alt="">
+            <h1>On-Site Enquiries Form</h1></div>
+        
+        <div class="con2">
+            <div class="field">
+            <label for="">Name<span style="color: red;">*</span></label><br>
+            <input type="text" name ="Name" required><br> </div>
+            <div class="field">
+            <label for="">Where are you<span style="color: red;">*</span></label><br>
+            <input type="text" name="Where are you" required><br></div>
+            <div class="field">
+            <label for="">Street Address</label><br>
+            <input type="text" name="Street Address"><br></div>
+            <div class="field">
+            <label for="">Address Line 2</label><br>
+            <input type="text" name="Address Line 2"><br></div>
+            <div class="field">
+            <label for="">City</label><br></div>
+            <div class="field">
+            <button type="submit" class="submit" >SUBMIT</button></div>
+            </form>
+        </div>
+</body>
+</html>

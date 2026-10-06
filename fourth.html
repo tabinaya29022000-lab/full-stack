@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0px;
+        padding:0px;
+        box-sizing: border-box;
+    }
+    ol
+    {
+        font-size: 35px;
+        margin-left: 50px;
+    }
+    table
+    {
+        background-color: aqua;
+        border: 4px solid black;
+        border-style: double;
+        margin: 35px auto;
+    }
+    table, th,tr,td
+    {
+        border-collapse: collapse;
+    }
+    tr,th,td
+    {
+        font-size: 30px;
+        padding:15px 35px;
+        border: 2px solid black;
+    }
+    th:nth-child(1)
+    {
+        background-color: purple;
+    }
+    tr:nth-child(5)
+    td:nth-child(3)
+    {
+        background-color: forestgreen;
+    }
+    tr:hover
+    {
+        background-color: blue;
+    }
+    td:hover
+    {
+        background-color: olive;
+    }
+    th 
+       {
+        font-style: italic;
+        background-color: red;
+    }
+    #Gender
+    {
+        background-color: blueviolet;
+    }
+    
+</style>
+</head>
+<body>
+        <h1>Ordered List</h1>
+        <ol type="A">
+        <li>opportunity</li>
+        <li>Focus</li>
+        <li>Consistency</li>
+        <li>Progress</li>
+        <li>Success</li>
+        </ol>
+    <table>
+        <tr>
+            <th>No</th>
+            <th> Name</th>
+            <th id="Gender">Gender</th>
+            <th> Marks</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Vijay</td>
+            <td>Male</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Aiswarya</td>
+            <td>Female</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Pandi</td>
+            <td>Male</td>
+            <td>455</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Pavithra</td>
+            <td>Female</td>
+            <td>350</td>
+        </tr>
+        <tr>
+            <td >5</td>
+            <td span="2">Vicky</td>
+            <td>Male</td>
+            <td>388</td>
+        </tr>
+      
+ </table>
+    
+    
+</body>
+</html>

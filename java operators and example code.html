@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // Arithematic operator
+    // Assignment operator
+    // Logical operator
+    // comparision operator
+    //conditonal operator
+
+    
+    <script>
+        // arithematic operator
+
+
+      let a=10;
+        let b=a;
+        console.log(a+b)
+        console.log(a-b)
+        console.log(10*10)
+        console.log(10/5)
+        console.log(2**5)
+        console.log(30%5)
+
+        // Assignment operator
+        let a=10;
+        let b=++a;
+        console.log(a);             //11
+        console.log(b);             //11
+        let c=10;
+        let d=c++;
+        console.log(c);              //11
+        console.log(d);              //10
+        let e=5;
+        let f=6;
+        console.log(e+=f)        //11
+        console.log(e)           //11
+        console.log(f)           //6
+        console.log(e-=f)        //5
+        console.log(e*=f)        //30
+        console.log(e/=f)        //5
+        console.log(e%=f)        //5
+        let a1=10;
+        let b1=--a1;
+        console.log(a1);             //9
+        console.log(b1);             //9
+        let a2=10;
+        let b2=a2--;
+        console.log(a2);             //9
+        console.log(b2);             //10
+
+        //Comparision Operator
+        
+        let x=10; y=15; z=20;
+        console.log(x>y);      // false
+        console.log(x<z);      // true
+        console.log(x<=y);      //true
+        console.log(x>=y);       // false
+        console.log(x!=y);       // true
+        console.log(x!==y);      // true
+
+        let x1=10; y1="10"
+        console.log(x1!=y1);          // false
+        console.log(x1!==y1);         // true
+
+        //Logical Operator
+
+        let x=10; y=5;
+        console.log(x>5 && y<10);       //true true  = true
+        console.log(x>5 && y>10);       // true false = false
+
+        console.log(x>15 || y===5);     // false true = true
+        console.log(x===0 || y===0);    // false false = false
+
+        console.log(!(x===y));          // (!false)  =  true
+        console.log(!(x>y));            // (! true)  =  false
+
+        console.log((10>5) && (5=="5"));    // true true = true
+
+        //Conditional operator
+
+        let age=18;                                 //if..else
+        if(age>=18){
+            console.log("Votting")
+        }
+        else 
+        {
+            console.log(" not Votting")                 //  votting
+        }
+
+        let mark=85;                                // if...else if .... else
+        if(mark>=0 && mark<35)                          
+        {
+            console.log("Fail");
+        }
+        else if ( mark>=35 && mark<50)
+        {
+           console.log("Just pass");
+        }
+        else if ( mark>=50 && mark<80)
+        {
+           console.log("Good");
+        }
+        else if ( mark>=80 && mark<=100)
+        {
+           console.log("Excellent");
+        }
+        else{
+            console.log("Invalid mark")                 // Excellent
+        }
+
+        let day="mon";                          //switch example
+        let dayName;
+        switch(day){
+            case "mon" :
+                dayName="Monday";
+                break;
+            case "tue" :
+                dayName="Tuesday";
+                break;
+            case "wed" :
+                dayName="Wednesday";
+                break;       
+            default:
+                dayName="Weekend";     
+        }
+        console.log(dayName); */
+
+        let username="Abi";
+        let result=username=="Abi" ? "login":"logout";
+        console.log(result);                                    //login
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

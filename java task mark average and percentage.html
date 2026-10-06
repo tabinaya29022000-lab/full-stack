@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .con {
+            width: 300px;
+            height: 50vh;
+            background:linear-gradient(rgb(69, 180, 180), rgb(31, 61, 100));
+            border: 2px solid rgb(7, 39, 39);
+            margin-left: 650px;
+            margin-top: 100px;
+            box-shadow: 20px  10px ;
+        }
+
+        input {
+            margin-left: 10px;
+            font-size: 15px;
+        }
+
+        button {
+            background-color: rgb(12, 106, 160);
+            width: 200px;
+            padding: 2px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        Username : <input type="text" name="Username" id="username" placeholder="Name"><br>
+        Tamil : <input type="text" name="Tamil" id="tamil" placeholder="Tamil Mark"><br>
+        English : <input type="text" name="English" id="english" placeholder="English Mark"><br>
+        Mathematics : <input type="text" name="Mathematics" id="maths" placeholder="Maths Mark"><br>
+        Science : <input type="text" name="Science" id="science" placeholder="Science Mark"><br>
+        SocialScience : <input type="text" name="Social Science" id="social" placeholder="Social Mark"><br>
+        <button onclick="calculation()">calc</button><br><br><br>
+        Total : <input type="text" name="" id="total"><br>
+        Average: <input type="text" id="average"><br>
+        Percentage : <input type="text" id="percentage"><br>
+        Grade : <input type="text" id="grade">
+
+        <script>
+            function calculation() {
+                var Tamil = Number(document.getElementById("tamil").value);
+                var English = Number(document.getElementById("english").value);
+                var Maths = Number(document.getElementById("maths").value);
+                var Science = Number(document.getElementById("science").value);
+                var Social = Number(document.getElementById("social").value);
+
+
+                const Total = Tamil + English + Maths + Science + Social;
+                document.getElementById("total").value = Total;
+
+                const Average = Total / 5;
+                document.getElementById("average").value = Average;
+
+                const Percentage = ((Total / 500) * 100);
+                document.getElementById("percentage").value = Percentage + "%";
+
+
+                let Grade;
+
+                if (Percentage >= 90)
+                {
+                    Grade = "A+";
+                }
+                else  (Percentage < 90)
+                {
+                    Grade = "A";
+                }
+                document.getElementById("grade").value = Grade;
+
+
+            }
+
+        </script>
+
+    </div>
+</body>
+
+</html>

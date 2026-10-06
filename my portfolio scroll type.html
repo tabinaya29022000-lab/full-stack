@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        *{
+            background-image: url(./images/backgroundtheme.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        nav
+        {
+            width:100%;
+            height:10vh;
+            /*background-color: blue;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           position: fixed;
+        }
+        .logo
+        {   
+            width: 30%;
+            height: 100%;   
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;   
+        }
+        .ul{
+            /*background-color: brown;*/
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            height: 100%;
+            
+        }
+        .li{
+            /*background-color: palevioletred;*/
+            margin-left: 20px;
+            list-style-type: none;
+            padding: 5px 15px;
+            color: antiquewhite;
+            
+
+        }
+        .link
+        {
+            /*background-color: yellowgreen;*/
+            font-size: 15px;
+            text-decoration: none;
+            color:blue;
+            position: relative;
+            font-weight: 600;
+            
+        }
+        .Aicon{
+            width: 62px;
+            height:62px;
+            border: 2px solid black;
+            
+        }
+        span{
+            color: blue;
+            font-size: 25px;
+            padding: 5px;
+            font-weight: 800;
+        }
+        .homecon{
+            /*background-color: red;*/
+            width:100%;
+            height:500px;
+            display: flex;
+        }
+        .homecon1
+        {
+            /*background-color: green;*/
+            width: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .homecon2
+        {
+           /*background-color: sandybrown;*/
+           width: 40%;
+           height: 100%; 
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        h1{
+            font-size: 60px;
+            font-weight: 500;
+            margin-left: -350px;
+            color: orangered;
+        }
+        p1
+        {
+            font-size: 15px;
+            margin-left: 30px;
+        }
+        .button{
+        align-self: flex-start;
+        margin-left: 5px;
+        padding: 20px;
+        }
+        .button1{
+            background-color: rgb(30, 30, 173, 0.8);
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: aliceblue;
+        }
+        .button2{
+            font-size: 20px;
+            border-radius: 5px;
+            color: blue;
+            padding: 5px 10px;
+        }
+        img{
+            width:300px;
+            height:350px;
+            border-radius: 50%;
+           border: 5px solid rgb(241, 140, 174);
+        }
+        .Aboutcon
+        {
+            background-color:whitesmoke;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            border: 2px solid gray;
+            border-style: dotted;
+        }
+        .Aboutcon1
+        {
+            /*background-color: rgb(29, 53, 5);*/
+            width: 30%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .subAboutcon1
+        {
+            background-color: rgb(175, 173, 168);
+            box-shadow:  0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0,0,0,0.5);
+            width: 300px;
+            height: 200px;
+            padding: 30px; 
+            border: 2px solid gray;     
+        }
+        .Aboutcon2
+        {
+            /*background-color: purple;*/
+            width: 70%;
+            height:400px;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        p2
+        {
+            column-gap: 10px;
+        }
+        .Resumecon{
+            background-color: whitesmoke;
+            width: 100%;
+            height: 400px;
+            display: flex;
+        }
+        .Resumecon1
+        {
+            /*background-color: brown;*/
+            width: 50%;
+            height:400px;
+            display: inline-block;
+        }
+        .Resumecon2
+        {
+            /*background-color: rgb(75, 42, 165);*/
+            width: 50%;
+            height:400px;
+        }
+        .subResumecon1
+        {
+            /*background-color: rgb(42, 165, 63);*/
+            width: 400px;
+            height:350px;
+            margin: 10px auto;
+            box-shadow: inset 0px 2px 4px rgb(0, 0, 0,0.8);
+        }
+        .subResumecon2
+        {
+            /*background-color: rgb(168, 17, 123);*/
+            width: 400px;
+            height:350px;
+            margin: 10px auto;
+            box-shadow: inset 0px 2px 4px rgb(0, 0, 0,0.8);
+
+        }
+        h4{
+            font-size: 20px;
+            color: blue;
+        }
+        h5{
+            font-size: 20px;
+            color: blue;
+        }
+        .Techcon
+        {
+            background-color: whitesmoke;
+            width: 100%;
+            height:200px;
+        }
+        .img1, .img2, .img3, .img4, .img5
+        {
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            margin: 0px 50px;
+        }
+        .Contactcon{
+            background-color: whitesmoke;
+            width:100%;
+            height: 300px;
+        }
+        .Contactcon1{
+            background-color: rgb(229, 226, 231);
+            width:400px;
+            height: 200px;
+            box-shadow: inset 0px 2px 4px rgba(11, 65, 145, 0.8), 0px 4px 6px rgba(11, 65, 145, 0.8);
+            margin-left: 900px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img class="Aicon" src="./images/A icon.jpg" alt="">
+            <span>Abinaya</span>
+        </div>
+        <ul class="ul">
+        <li class="li"><a href="#Home" class="link">Home</a></li>
+        <li class="li"><a href="#About" class="link">About</a></li>
+        <li class="li"><a href="#Resume" class="link">Resume</a></li>
+        <li class="li"><a href="#Tech" class="link">Tech</a></li>
+        <li class="li"><a href="#Contact" class="link">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="homecon" id="Home">
+        
+        <div class="homecon1" >
+            <h1> I Am Abinaya</h1>
+            <p1>Hi, I'm Abinaya an aspiring frontend Developer dedicated to writing clean code and building user-centeric web projects. I work with (HTML,CSS, Java Script and React) to bring creative designs to life, I am very excited about creating clean, fast and accessible user interfaces and I am looking forward to bringing my skills to a growing team or a front end developer.</p1>
+            <div class="button">
+            <button class="button1">Hire Me</button>
+            <button class="button2">Download CV</button>
+            
+            </div>
+        </div>
+        <div class="homecon2">
+            <img class="Photo" src="./images/photo ai.jpg" alt="">
+        </div>    
+    </div>
+    
+    <div class="Aboutcon" id="About" >
+        <div class="Aboutcon1">
+            <div class="subAboutcon1">
+            <h2>Personal Details</h2><br>
+            <p2>E-mail: tabinaya29022000@gmail.com <br><br>Languages:Tamil,English <br><br> Nationality:Indian</p2>
+            </div>
+        </div>
+            <div class="Aboutcon2">
+                <h3>I Am Abinaya</h3>
+                <p3> obviously, I'am an aspiring frontend Developer dedicated to writing clean code and building user-centeric web projects.I am graduated with a degree in M.Sc.Statistics from The Madura College, Madurai. During my studies I built a strong foundation in core web technologies like <br>1.C++ <br>2.Java <br>3.Python</p3>
+            </div>
+        
+    </div>
+    <div class="Resumecon" id="Resume">
+        <div class="Resumecon1">
+            <div class="subResumecon1">
+                <h4> <i class="fa-solid fa-graduation-cap"></i>Education </h4>
+                <p4><br><b>M.Sc.Statistics</b>  <br> <b>The Madura College, Madurai</b> <br><br> Studied Statistical Analysis, Data Interpertation and Logical Problem Solving, forming a strong analytical foundation</p4>
+            </div>
+        </div>
+        <div class="Resumecon2">
+            <div class="subResumecon2">
+                <h5> <i class="fa-solid fa-laptop"></i>Peronal Projects </h5>
+                <p5> <br><b>Portfolio Website</b>
+                    <br> <br> Designed and developed a personal responssive portfolio using HTML, CSS, and JavaScript. Focused on user experience and clean code  structure. <br> <br><b>Interactive Web App </b><br> <br> Created a data visulization interface. Applied statistical concepts to web-based data representation.
+                </p5>
+            </div>
+        </div>
+    </div>
+    <div class="Techcon" id="Tech">
+        <img class="img1" src="./images/visual code studio.jpg" alt="">
+        <img class="img2" src="./images/java.png" alt="">
+        <img class="img3" src="./images/java script.png" alt="">
+        <img class="img4" src="./images/python.jpg" alt="">
+        <img class="img5" src="./images/react.png" alt="">
+    </div>
+    <div class="Contactcon" id="Contact">
+        <div class="Contactcon1">
+         <br><br><br><p6><b>Contact Me </b></p6>
+         <address> <br>2/305 V O C Street <br>Samayanallur. Madurai - 625 402</address>
+         <a href="tabinaya29022000@gmail.com">tabinaya29022000@gmail.com</a>
+         <p7><br>9566336158</p7>
+        </div>
+    </div>
+</body>
+</html>

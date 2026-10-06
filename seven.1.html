@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,*::before
+        {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+
+        }
+        Header
+        {
+            background-color: red;
+            color: bisque;
+            font-size: 30px;
+            text-align: center;
+            padding: 15px;
+        }
+        nav
+        {
+            background-color: blue;
+            color: beige;
+            text-align: center;
+            padding:15px;
+            font-size: 20px;
+        }
+        main 
+        {
+            background-color: rgb(246, 255, 127);
+            width:100%;
+            height:70vh;
+            display:flex ;
+            
+        }
+        .left_main
+        {
+            background-color: yellow;
+            width: 50%;
+            height: 100%;
+        }
+        section
+        {
+            background-color: green;
+            width: 100%;
+            height:50% ;
+        }
+        article
+        {
+            background-color: blue;
+            width: 100%;
+            height: 50%;
+        }
+        aside
+        {
+            background-color: violet;
+            width: 90%;
+            height: 90%;
+
+        }
+        .right_main 
+        {
+            background-color: orangered;
+            width:50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer
+        {
+            background-color: rgb(160, 202, 221);
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>
+       <div class="left_main">
+            <section></section>
+            <article></article>
+       </div>
+       <div class="right_main">
+        <aside></aside>
+       </div>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>

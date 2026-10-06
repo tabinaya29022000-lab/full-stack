@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        .main
+        {
+            
+            width:200px;
+            display: flex;
+            /*  flex-wrap: nowrap;
+            flex-direction: row;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            flex-direction: column-reverse;
+            flex-direction: row-reverse;
+            flex-flow: row nowrap;
+            flex-flow: row wrap;
+            flex-flow: row wrap-reverse;
+            flex-flow: row-reverse nowrap;
+            flex-flow: row-reverse wrap;
+            flex-flow: column nowrap;
+            flex-flow: column wrap;
+            flex-flow: column wrap-reverse;
+            flex-flow: column-reverse nowrap;
+            flex-flow: column-reverse wrap;*/
+            
+
+        }
+       
+        .item
+        {
+            width:200px;
+            height:200px;
+            background-color: var (--primary );
+            border: 1px solid black;
+            align-items: baseline;
+            align-items: center;
+            flex-shrink: 0;
+            flex-grow: 1;
+           
+        }
+        .item1{background-color: rgb(84, 186, 226);height:200px;flex-grow: 1;flex-shrink: 0;}
+        .item2{background-color: rgb(28, 206, 12);height:230px;flex-grow: 1;flex-shrink: 1;}
+        .item3{background-color: rgb(182, 19, 109);height:150px;flex-grow: 1;flex-shrink:1;}
+        .item4{background-color: rgb(174, 206, 34);height:300px;flex-grow: 1;flex-shrink: 1;}
+    </style>
+</head>
+<body>
+<div class="main">
+   
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+    <div class="item item4"></div>
+ </div>
+</body>
+</html>
