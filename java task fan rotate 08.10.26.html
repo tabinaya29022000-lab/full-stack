@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+
+      }
+    body {
+      
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      
+    }
+    .row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .fan {
+      font-size: 100px;
+      display: inline-block;
+      color: blue;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: rgb(21, 21, 88);
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <button onclick="spin(10)">Top Left</button>
+    <button onclick="spin(20)">Top Right</button>
+  </div>  
+  <div class="fan" id="fan">
+    <i class="fa-solid fa-fan"></i>
+  </div>
+  <div class="row">
+    <button onclick="spin(30)">Bottom Left</button>
+    <button onclick="spin(0)">Bottom Right</button>
+  </div>
+  
+
+  <script>
+  let direction = 0;
+  let speed = 0;
+  const fan = document.getElementById('fan');
+
+  function spin(s) {
+    speed = s;
+  }
+
+  setInterval(function() {
+    if (speed !== 0) {
+      direction += speed;
+      fan.style.transform = "rotate(" + direction + "deg)";
+    }
+  }, 20);
+</script>
+
+</body>
+</html>
