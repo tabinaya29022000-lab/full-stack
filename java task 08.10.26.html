@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        form{
+            margin-left: 20px;
+            margin-top: 50px;
+            padding: 10px;
+        }
+        label,input{
+            font-size: 20px;
+        }
+        button{
+            padding: 10px;
+            font-size: 15px;
+            margin-left:30px ;
+            background-color: rgb(15, 180, 202);
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="margin-left:80px ; color: blue;">Form</h1>
+    <form action="">
+        <label for="">Username :</label><br>
+        <input id="name" type="text" name="Username"><br>
+        <label for="">Age</label><br>
+        <input style="width: 247px;" id="age" type="number" name="age" min="18" max="50"><br>
+        <label for="">Email</label><br>
+        <input id="email" type="email" name="email"><br>
+        
+
+    </form>
+    <button onclick="login()" >Log In</button>
+
+    <script>          
+        const usersname=["Abinaya","Vijay","Ais"]                                                                          
+        function login(){   
+        var Age=document.getElementById("age").value;
+        var Email=document.getElementById("email").value;
+        var Username=document.getElementById("name").value;
+        let usersname_=false;
+        for(let i=0;i<usersname.length;i++)
+        
+        { 
+            if(Username==usersname[i]){
+                usersname_=true;
+            }
+        }
+        if(usersname_){
+            alert("Login Successful");
+        }
+        else{
+            alert("Login Fails");
+        }
+        console.log(Username);
+        console.log(Age);
+        console.log(Email);
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
