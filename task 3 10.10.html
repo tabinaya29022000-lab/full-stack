@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eaf3ff;
+    padding: 20px;
+    color: #222;
+}
+
+.maincon {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    border: 8px solid #111;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #0002;
+}
+
+.header {
+    background: linear-gradient(120deg, #0750aa, #03409a);
+    color: white;
+    text-align: center;
+    padding: 20px 12px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 15px;
+}
+
+form {
+    padding: 12px;
+}
+
+.section {
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 12px;
+    min-width: 0;
+}
+
+.section-title {
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #dcecff;
+    border-bottom: 1px solid #ddd;
+}
+.section-content {
+    padding: 14px 18px;
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 22px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field label,
+.field-label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.required {
+    color: red;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #c8cdd3;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #fff;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1670e8;
+    box-shadow: 0 0 4px #1670e855;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 75px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    padding-top: 3px;
+}
+
+.options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #0875ed;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.personal {
+    width: 100%;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 3fr 2.1fr;
+    gap: 0 12px;
+}
+
+.left-column,
+.right-column {
+    min-width: 0;
+}
+
+.contact .section-content,
+.course .section-content,
+.education .section-content,
+.skills .section-content,
+.additional .section-content,
+.terms .section-content {
+    min-width: 0;
+}
+
+.contact-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 22px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.education-fields {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.skill-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 15px;
+}
+
+.skill-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.upload-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.upload-fields input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+    font-size: 12px;
+}
+
+.upload-fields small {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #777;
+}
+
+.upload-fields textarea {
+    min-height: 55px;
+    font-size: 12px;
+}
+
+.terms-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.terms-row input {
+    margin-top: 4px;
+}
+
+.terms-link {
+    display: inline-block;
+    margin: 12px 0 0 30px;
+    color: #0753ac;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Buttons */
+
+.buttons {
+    background: #b9dcff;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 15px 24px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-btn {
+    background: #0875ed;
+}
+
+.reset-btn {
+    background: #777;
+}
+
+button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 991px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        border-width: 5px;
+        border-radius: 15px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .fields {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .education-fields {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .upload-fields {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .upload-fields .message-field {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 7px;
+    }
+
+    .container {
+        border-width: 3px;
+        border-radius: 12px;
+    }
+
+    .header {
+        padding: 18px 10px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+        line-height: 1.35;
+    }
+
+    .header p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    form {
+        padding: 8px;
+    }
+
+    .section-title {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .section-content {
+        padding: 12px;
+    }
+
+    .fields,
+    .contact-fields,
+    .education-fields,
+    .upload-fields {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .full-width,
+    .upload-fields .message-field {
+        grid-column: auto;
+    }
+
+    .options {
+        gap: 12px;
+    }
+
+    .skill-options {
+        gap: 12px;
+    }
+
+    .terms-row {
+        font-size: 13px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="maincon">
+
+    <header class="header">
+        <h1>🎓 Student Registration Form</h1>
+        <p>Fill in the details below to complete your registration</p>
+    </header>
+
+    <form id="registrationForm">
+        <section class="section personal">
+            <div style="background: #d5e8ff;" class="section-title">👤 1. Personal Details</div>
+
+            <div class="section-content">
+                <div class="fields">
+
+                    <div class="field">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName"
+                        placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="dob">Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="field">
+                        <span class="field-label">Gender <span class="required">*</span></span>
+                        <div class="options">
+                            <label><input type="radio" name="gender" value="Male" required> Male</label>
+                            <label><input type="radio" name="gender" value="Female"> Female</label>
+                            <label><input type="radio" name="gender" value="Other"> Other</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="father">Father's Name <span class="required">*</span></label>
+                        <input type="text" id="father" name="father"
+                        placeholder="Enter father's name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="mother">Mother's Name <span class="required">*</span></label>
+                        <input type="text" id="mother" name="mother"
+                        placeholder="Enter mother's name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="blood">Blood Group</label>
+                        <select id="blood" name="blood">
+                            <option value="">-- Select Blood Group --</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="layout">
+            <div class="left-column">
+                <section class="section contact">
+                    <div style=" background: #c9f5d8;" class="section-title">📞 2. Contact Details</div>
+
+                    <div class="section-content">
+                        <div class="contact-fields">
+
+                            <div class="field">
+                                <label for="email">Email ID <span class="required">*</span></label>
+                                <input type="email" id="email" name="email"
+                                placeholder="example@mail.com" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="mobile">Mobile Number <span class="required">*</span></label>
+                                <input type="tel" id="mobile" name="mobile"
+                                placeholder="9876543210"
+                                pattern="[6-9][0-9]{9}"
+                                maxlength="10" inputmode="numeric" required>
+                            </div>
+
+                            <div class="field full-width">
+                                <label for="address">Address <span class="required">*</span></label>
+                                <textarea id="address" name="address"
+                                placeholder="Enter your full address" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section education">
+                    <div style=" background: #ffdada;" class="section-title">📚 4. Educational Details</div>
+
+                    <div class="section-content">
+                        <div class="education-fields">
+
+                            <div class="field">
+                                <label for="qualification">Highest Qualification <span class="required">*</span></label>
+                                <select id="qualification" name="qualification" required>
+                                    <option value="">-- Select --</option>
+                                    <option>10th</option>
+                                    <option>12th</option>
+                                    <option>Diploma</option>
+                                    <option>BA</option>
+                                    <option>BSc</option>
+                                    <option>BCom</option>
+                                    <option>BCA</option>
+                                    <option>BE</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="year">Year of Passing <span class="required">*</span></label>
+                                <input type="number" id="year" name="year"
+                                placeholder="e.g. 2026" min="1950" max="2100" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="percentage">Percentage / CGPA <span class="required">*</span></label>
+                                <input type="number" id="percentage" name="percentage"
+                                placeholder="e.g. 85" min="0" max="100"
+                                step="0.01" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="college">School / College Name <span class="required">*</span></label>
+                                <input type="text" id="college" name="college"
+                                placeholder="Enter institution name" required>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section additional">
+                    <div style="background: #bceefa;" class="section-title">📎 6. Additional Information</div>
+                    <div class="section-content">
+                        <div class="upload-fields">
+                            <div class="field">
+                                <label for="photo">Upload Photo <span class="required">*</span></label>
+                                <input type="file" id="photo" name="photo"
+                                accept=".jpg,.jpeg,.png" required>
+                                <small>JPG, PNG - Max 2MB</small>
+                            </div>
+
+                            <div class="field">
+                                <label for="resume">Upload Resume</label>
+                                <input type="file" id="resume" name="resume"
+                                accept=".pdf">
+                                <small>PDF - Max 2MB</small>
+                            </div>
+
+                            <div class="field message-field">
+                                <label for="message">Any Message</label>
+                                <textarea id="message" name="message"
+                                placeholder="Enter your message (optional)"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="right-column">
+                <section class="section course">
+                    <div style="background: #fff0b9;" class="section-title">🎓 3. Course Details</div>
+                    <div class="section-content">
+                        <div class="field">
+                            <label for="course">Select Course <span class="required">*</span></label>
+                            <select id="course" name="course" required>
+                                <option value="">-- Select Course --</option>
+                                <option>HTML & CSS</option>
+                                <option>JavaScript</option>
+                                <option>Full Stack Development</option>
+                                <option>Python Programming</option>
+                                <option>Java Programming</option>
+                                <option>Data Science</option>
+                                <option>Web Development</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="field">
+                            <span class="field-label">Preferred Batch <span class="required">*</span></span>
+                            <div class="options">
+                                <label><input type="radio" name="batch" value="Morning" required> Morning</label>
+                                <label><input type="radio" name="batch" value="Afternoon"> Afternoon</label>
+                                <label><input type="radio" name="batch" value="Evening"> Evening</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="field">
+                            <span class="field-label">Mode of Learning</span>
+                            <div class="options">
+                                <label><input type="checkbox" name="mode" value="Online"> Online</label>
+                                <label><input type="checkbox" name="mode" value="Offline"> Offline</label>
+                                <label><input type="checkbox" name="mode" value="Hybrid"> Hybrid</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>         
+                <section class="section skills">
+                    <div style="background: #e5d7ff; " class="section-title">⚙️ 5. Skills & Interests</div>
+                    <div class="section-content">
+                        <span class="field-label">Technical Skills (Select all that apply)</span>
+                        <div class="skill-options">
+                            <label><input type="checkbox" name="skills" value="C"> C</label>
+                            <label><input type="checkbox" name="skills" value="C++"> C++</label>
+                            <label><input type="checkbox" name="skills" value="Java"> Java</label>
+                            <label><input type="checkbox" name="skills" value="Python"> Python</label>
+                            <label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
+                            <label><input type="checkbox" name="skills" value="Data Science"> Data Science</label>
+                            <label><input type="checkbox" name="skills" value="IoT"> IoT</label>
+                            <label><input type="checkbox" name="skills" value="Others"> Others</label>
+                        </div>
+                    </div>
+                </section>
+                <section class="section terms">
+                    <div style="background: #c9f8c9;" class="section-title">📄 7. Terms & Conditions</div>
+
+                    <div class="section-content">
+                        <div class="terms-row">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <label for="agree">
+                                I agree to the terms and conditions and confirm that all the information provided is correct.
+                            </label>
+                        </div>
+
+                        <a href="#termsInfo" class="terms-link"
+                        onclick="alert('Please ensure all the information provided is correct before submitting.'); return false;">
+                            Read Terms & Conditions
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="submit-btn">➤ Submit Form</button>
+            <button type="reset" class="reset-btn">⟳ Reset Form</button>
+        </div>
+
+    </form>
+</div>
+
