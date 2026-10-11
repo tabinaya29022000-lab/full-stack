@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .main-box {
+            /* background-color: aqua; */
+            width: 90%;
+            max-width: 1200px;
+            height: 500px;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px -20px 15px -5px rgb(229, 171, 235), 0px 20px 15px -5px rgb(238, 160, 208);
+            border-radius: 20px;
+        }
+
+        .left-con {
+            /* background-color: chartreuse; */
+            background-color: rgb(235, 232, 238);
+            width: 60%;
+            height: 100%;
+            padding: 30px 30px;
+        }
+
+        .right-con {
+            /* background-color: chocolate; */
+            background-color: rgb(244, 247, 246);
+            width: 40%;
+            height: 100%;
+            padding: 20px;
+
+        }
+
+        img {
+            width: 360px;
+            height: 450px;
+            border-radius: 10px;
+            object-fit: cover;
+
+        }
+
+        .heading1 {
+            background-color: rgba(218, 231, 253);
+            width: 171px;
+            border-radius: 20px;
+            font-size: 15px;
+            color: #1b67fb;
+            padding: 5px 10px;
+        }
+
+        .p1 {
+            max-width: 550px;
+            font-size: 60px;
+            color: #041855;
+            font-weight: 800;
+            line-height: 70px;
+            padding: 20px 0px;
+        }
+
+        .p2 {
+            font-size: 25.8px;
+            letter-spacing: 1px;
+            color: #4b5972;
+            text-align: justify;
+
+        }
+
+        .button-con {
+            max-width: 550px;
+            padding: 15px 0px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .button1 {
+            padding: 15px 15px;
+            font-size: 18px;
+            color: aliceblue;
+            background-color: #006afd;
+            border-radius: 10px;
+            width: 250px;
+
+        }
+
+        .button2 {
+            padding: 15px 15px;
+            font-size: 18px;
+            color: #006afd;
+            background-color: #e8edf3;
+            border-radius: 10px;
+            border: 2px solid #006afd;
+            width: 250px;
+        }
+
+        .rating {
+            max-width: 550px;
+            display: flex;
+            gap: 80px;
+            padding: 20px 0px;
+        }
+
+        .R {
+            text-align: center;
+            border-right: 1px solid gray;
+
+        }
+
+        
+
+        @media screen and (max-width:1305px) {
+            .main-box {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:900px) {
+            .main-box {
+                max-width: 600px;
+                width: 100%;
+                display: block;
+            }
+
+            .left-con {
+                width: 100%;
+                max-width: 600px;
+                padding: 10px 10px;
+            }
+
+            .right-con {
+                width: 100%;
+                height: 300px;
+
+            }
+
+            .p1 {
+
+                font-size: 50px;
+                font-weight: 700;
+
+
+            }
+
+            img {
+                width: 100%;
+                max-height: 270px;
+            }
+
+        }
+
+        @media screen and (max-width:350px) {
+            .left-con {
+                padding: 15px 10px;
+            }
+            .right-con{
+                max-height: 250px;
+            }
+
+            .p1 {
+                font-size: 25px;
+                font-weight: 800;
+                line-height: 40px;
+            }
+
+            .p2 {
+                font-size: 20px;
+            }
+
+            .button-con {
+                display: block;
+            }
+
+            .button2 {
+                margin-top: 5px;
+            }
+
+            .rating
+            {
+               
+                gap:20px;
+            }    
+            .R.con1
+            {
+               padding-right: 10px;
+                padding-left: 5px;
+            }
+            .R.con2
+            {
+                padding-right: 10px;
+                padding-left: 5px;
+            }
+            .R.con3
+            {
+                padding-left: 0px;
+            }
+            img
+            {
+                height: 200px;
+            }
+                }
+    </style>
+</head>
+
+<body>
+    <div class="main-box">
+        <div class="left-con">
+            <h1 class="heading1">Welcome to EduTech</h1>
+            <p class="p1">Learn Today Build Tomorrow</p>
+            <p class="p2">Join thousands of students and develop real-world skills with expert-led courses.</p>
+            <div class="button-con">
+                <button class="button1"> <b> Get Started</b> <i class="fa-solid fa-arrow-right-long"></i> </button>
+                <button class="button2"> <i class="fa-solid fa-circle-play"></i><b> Watch Video</b></button>
+            </div>
+            <div class="rating">
+                <div class="R con1">
+                    <h2 style="color: #006afd;">10K+</h2>
+                    <p>Students</p>
+                </div>
+                <div class="R con2">
+                    <h2 style="color: #006afd;">50+</h2>
+                    <p>Courses</p>
+                </div>
+                <div class="R con3" style="border: none;">
+                    <h2 style="color: #006afd;">95%</h2>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-con">
+            <img src="./images/lap1.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
