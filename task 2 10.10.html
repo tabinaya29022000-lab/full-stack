@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        nav {
+            background-color: blue;
+            width: 100%;
+            height: 10vh;
+            text-align: center;
+            padding: 5px;
+
+        }
+
+        .heading {
+            color: aliceblue;
+        }
+
+        .con1 {
+            width: 98%;
+            /* height: 150px; */
+            background-color: blueviolet;
+            margin-top: 8px;
+            margin-left: 15px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            overflow: hidden;
+        }
+
+        .sub-head1 {
+            font-size: 15px;
+            background-color: aqua;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding: 5px 15px;
+        }
+
+        .formcon1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 10px 15px;
+        }
+
+        .form1 {
+            flex: 1 0 250px;
+        }
+
+        .form1 label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form1 input {
+            padding: 5px 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            width: 350px;
+            margin-top: 1px;
+        }
+
+        .gendercon {
+            display: flex;
+            width: 250px;
+        }
+
+        .form1 select {
+            width: 350px;
+            padding: 5px;
+        }
+/* -------------------------------------------------Con2----------------------------------------------------- */
+        .con2 {
+            background-color: aqua;
+            width: 98%;
+            min-height: 200px;
+            margin-top: 8px;
+            margin-left: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 5px;
+        }
+
+        .leftcon {
+            background-color: chartreuse;
+            flex: 1 1 60%;
+            /* width:50%;
+            height: 100%;
+            min-height: 200px; */
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .rightcon {
+            background-color: cornflowerblue;
+            flex: 1 1 40%;
+            /* width:40%;
+            height: 100%;
+            min-height: 200px; */
+
+        }
+
+        .formcon2 {
+            background-color: blueviolet;
+            width: 99%;
+            margin-left: 2px;
+            border: 1px solid gray;
+            overflow: hidden;
+            /* border-top-right-radius: 5px;
+            border-top-left-radius: 5px; */
+            border-radius: 5px;
+        }
+
+        .formcon2 h1 {
+            background-color: aqua;
+
+        }
+
+        .sub-formcon2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 10px 15px;
+        }
+
+        .form2 {
+            flex: 1 0 370px;
+        }
+
+        .form2 input {
+            padding: 5px 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            width: 330px;
+            margin-top: 1px;
+        }
+
+        .form2 label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        #form2-inp {
+            height: 70px;
+            width: 720px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="heading"> <i class="fa-solid fa-graduation-cap"></i> Student Registration Form</h1>
+        <p style="color: aliceblue;">Fill in the details below to complete your registration</p>
+    </div>
+    <div class="con1">
+        <h1 class="sub-head1"><i class="fa-solid fa-user"></i> 1.Personal Details</h1>
+        <form action="">
+            <div class="formcon1">
+                <div class="form1">
+                    <label for="">Full Name <span style="color: red;">*</span></label><br>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form1">
+                    <label for="">Date of Birth <span style="color: red;">*</span></label><br>
+                    <input type="number" placeholder="dd-mm-yyyy">
+                </div>
+                <div class="form1">
+                    <label for="">Gender <span style="color: red;">*</span></label><br>
+                    <div class="gendercon">
+                        <input type="radio" name="gender" placeholder="Male">
+                        <label for="">Male</label>
+                        <input type="radio" name="gender" placeholder="Female">
+                        <label for="">Female</label>
+                        <input type="radio" name="gender" placeholder="Other">
+                        <label for="">Other</label>
+                    </div>
+                </div>
+                <div class="form1">
+                    <label for="">Father's Name <span style="color: red;">*</span></label><br>
+                    <input type="text" placeholder="Enter father's name">
+                </div>
+                <div class="form1">
+                    <label for="">Mother's Name <span style="color: red;">*</span></label><br>
+                    <input type="text" placeholder="Enter mother's name">
+                </div>
+                <div class="form1">
+                    <label for="">Blood Group</label><br>
+                    <select name="Blood-group" id="">
+                        <option value="" disabled selected>-- Select Blood Group --</option>
+                        <option value="A+ve">A+ve</option>
+                        <option value="A1+ve">A1+ve</option>
+                        <option value="B+ve">B+ve</option>
+                        <option value="o+ve">O+ve</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------- -->
+    <div class="con2">
+        <div class="leftcon">
+            <div class="formcon2">
+                <h1><i class="fa-solid fa-phone"></i>2.Contact Details</h1>
+                <form action=""></form>
+                <div class="sub-formcon2">
+                    <div class="form2">
+                        <label for="">Email ID <span style="color: red;">*</span></label><br>
+                        <input type="email" placeholder="example@gmail.com" required>
+                    </div>
+                    <div class="form2">
+                        <label for="">Mobile Number <span style="color: red;">*</span></label><br>
+                        <input type="number" placeholder="9566996158" required>
+                    </div>
+                    <div class="form2">
+                        <label for="">Address <span style="color: red;">*</span></label><br>
+                        <input id="form2-inp" type="text" placeholder="Enter your full address" required>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="formcon3">
+                <h1><i class="fa-solid fa-book-open-reader"></i>4.Educatiional Details</h1>
+                <form action=""></form>
+                <div class="sub-formcon3">
+                    <div class="form3">
+                        <label for="">Select Courses<span style="color: red;">*</span></label><br>
+                        <select name="Select Courses" id="" required>
+                            <option value="" disabled selected>-- Select Courses --</option>
+                            <option value="CSS">CSS</option>
+                            <option value="Java Script">Java Script</option>
+                            <option value="Java">Java</option>
+                            <option value="React">React</option>
+                        </select>
+                    </div>
+                    <div class="form3">
+                    <label for="">Preferred Batch<span style="color: red;">*</span></label><br>
+                    <div class="batchcon">
+                        <input type="radio" name="Batch" placeholder="Morning">
+                        <label for="">Morning</label>
+                        <input type="radio" name="Batch" placeholder="Afternoon">
+                        <label for="">Afternoon</label>
+                        <input type="radio" name="Batch" placeholder="Evening">
+                        <label for="">Evening</label>
+                    </div>
+                    <div class="form3">
+                    <label for="">Mode of Learning<span style="color: red;">*</span></label><br>
+                    <div class="learning">
+                        <input type="checkbox" name="learn" value="Online">
+                        <label for="">Online</label>
+                        <input type="checkbox" name="learn" value="Offline" >
+                        <label for="">Offline</label>
+                        <input type="checkbox" name="Hybrid" >
+                        <label for="">Hybrid</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="formcon4"></div>
+        </div> -->
+
+    <!-- ---------------------------------------------------------------------------------------- -->
+
+        <div class="rightcon"></div>
+    </div>
+</body>
+
+</html>
+<!-- <h1><i class="fa-solid fa-graduation-cap"></i>3.Course Details</h1> -->
