@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <--------------------------------------33 Question--------------------------------------->
+    <!-- <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            background-color: aqua;
+            width: 70%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        th {
+            padding: 12px 18px;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            border: 1px solid black;
+        }
+
+        tr:hover {
+            background-color: rgb(77, 77, 136);
+            color: white;
+        }
+    </style> -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            background-color: #fff;
+            width: 85%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 10px 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .summary-box {
+            width: 85%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .summary-box p {
+            margin-bottom: 8px;
+            color: #333;
+        }
+    </style>
+
+    <!-- <--------------------------------------3 Question------------------------------------- -->
+
+</head>
+
+<body>
+
+    <!-- -------------------------------------33 Question----------------------------------- -->
+
+    <!-- <h1>Department-wise Report</h1>
+    <table id="report">
+        <thead>
+            <tr>
+                <th>Department Name</th>
+                <th>Employee Count</th>
+                <th>Total Payroll</th>
+                <th>Average Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IT</td>
+                <td id="IT-count"></td>
+                <td id="IT-salary"></td>
+                <td id="IT-perf"></td>
+            </tr>
+            <tr>
+                <td>HR</td>
+                <td id="HR-count"></td>
+                <td id="HR-salary"></td>
+                <td id="HR-perf"></td>
+            </tr>
+            <tr>
+                <td>Finance</td>
+                <td id="Finance-count"></td>
+                <td id="Finance-salary"></td>
+                <td id="Finance-perf"></td>
+            </tr>
+            <tr>
+                <td>Sales</td>
+                <td id="Sales-count"></td>
+                <td id="Sales-salary"></td>
+                <td id="Sales-perf"></td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <!-- -------------------------------------41 Question----------------------------------- -->
+
+
+    <h1>Employee Bonus Report & Payroll Optimization</h1>
+    <table id="bonus-table">
+        <thead>
+            <tr>
+                <th>Emp ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Bonus %</th>
+                <th>Bonus Amount</th>
+                <th>Final Salary</th>
+            </tr>
+        </thead>
+        <tbody id="bonus-tbody">
+
+        </tbody>
+    </table>
+
+
+    <div class="summary-box" id="summary-section">
+        <p><b>Total Bonus Expenditure:</b> <span id="total-bonus"></span></p>
+        <p><b>Highest Bonus Employee:</b> <span id="highest-bonus"></span></p>
+    </div>
+
+    <script>
+        const employees = [
+            { id: 101, name: "Arun", department: "IT", salary: 75000, performance: 92, experience: 6, active: true, skills: ["JavaScript", "React"] },
+            { id: 102, name: "Priya", department: "HR", salary: 48000, performance: 85, experience: 4, active: true, skills: ["Excel", "Recruitment"] },
+            { id: 103, name: "Karthik", department: "IT", salary: 95000, performance: 96, experience: 8, active: true, skills: ["Java", "Spring"] },
+            { id: 104, name: "Divya", department: "Finance", salary: 65000, performance: 78, experience: 5, active: true, skills: ["Excel", "SQL"] },
+            { id: 105, name: "Vijay", department: "IT", salary: 55000, performance: 68, experience: 2, active: true, skills: ["JavaScript", "HTML"] },
+            { id: 106, name: "Meena", department: "Finance", salary: 82000, performance: 91, experience: 7, active: true, skills: ["SQL", "Python"] },
+            { id: 107, name: "Suresh", department: "HR", salary: 42000, performance: 62, experience: 3, active: false, skills: ["Recruitment"] },
+            { id: 108, name: "Nithya", department: "IT", salary: 88000, performance: 89, experience: 5, active: true, skills: ["React", "Node.js"] },
+            { id: 109, name: "Praveen", department: "Sales", salary: 60000, performance: 75, experience: 4, active: true, skills: ["Communication", "CRM"] },
+            { id: 110, name: "Lakshmi", department: "Sales", salary: 72000, performance: 94, experience: 6, active: true, skills: ["CRM", "Analytics"] },
+            { id: 111, name: "Manoj", department: "Finance", salary: 50000, performance: 55, experience: 1, active: false, skills: ["Excel"] },
+            { id: 112, name: "Anitha", department: "IT", salary: 105000, performance: 98, experience: 10, active: true, skills: ["Java", "AWS", "SQL"] }
+        ];
+        // <!-- <--------------------------------------33 Question-------------------------------------> -->
+
+        // function calculateDepartmentReport(deptName, elementId) {
+        //     let deptEmployees = employees.filter(emp => emp.department === deptName);
+        //     let count = deptEmployees.length;
+        //     let totalSalary = deptEmployees.reduce((sum, emp) => sum + emp.salary, 0);
+        //     let totalPerformance = deptEmployees.reduce((sum, emp) => sum + emp.performance, 0);
+        //     let avgPerformance = count > 0 ? (totalPerformance / count).toFixed(2) : 0;
+
+
+        //     document.getElementById(elementId + "-count").innerText = count;
+        //     document.getElementById(elementId + "-salary").innerText = totalSalary;
+        //     document.getElementById(elementId + "-perf").innerText = avgPerformance;
+        // }
+
+
+        // calculateDepartmentReport("IT", "IT");
+        // calculateDepartmentReport("HR", "HR");
+        // calculateDepartmentReport("Finance", "Finance");
+        // calculateDepartmentReport("Sales", "Sales");
+
+        // <!-- <--------------------------------------34 Question---------------------------------> -->
+
+        // const all_skills_array = employees.map((val, ind, arr) => val.skills);
+
+        // const Combined_Skills = all_skills_array.reduce((sum, val) => {
+        //     return sum.concat(val);
+        // }, []);
+
+        // const unique_skills = Combined_Skills.filter((val, ind, arr) => {
+        //     return Combined_Skills.indexOf(val) == ind;
+        // });
+        // console.log(unique_skills);
+
+        // <!-- <--------------------------------------35 Question---------------------------------> -->
+
+        // const all_skills_array = employees.map(val => val.skills);
+        // const Combined_Skills = all_skills_array.reduce((sum, val) => {
+        //     return sum.concat(val);
+        // }, []);
+        // const unique_skills = Combined_Skills.filter((val, ind, arr) => {
+        //     return arr.indexOf(val) === ind;
+        // });
+        // console.log("Unique Skills List:", unique_skills);
+
+        // <!-- <--------------------------------------36 Question---------------------------------> -->
+
+        // const all_skills_array = employees.map(val => val.skills);
+        // const Combined_Skills = all_skills_array.reduce((sum, val) => sum.concat(val), []);
+        // const hasPython = Combined_Skills.includes("Python");
+        // console.log("Is Python present?", hasPython);
+
+        // <!-- <--------------------------------------37 Question---------------------------------> -->
+
+        // const all_skills_array = employees.map(val => val.skills);
+        // const Combined_Skills = all_skills_array.reduce((sum, val) => sum.concat(val), []);
+        // const sqlIndex = Combined_Skills.indexOf("SQL");
+        // console.log("First occurrence of SQL is at index:", sqlIndex);
+
+        // <!-- <--------------------------------------38 Question---------------------------------> -->
+        // const newEmployee = {
+        //     id: 113,
+        //     name: "Vijay",
+        //     department: "IT",
+        //     salary: 90000,
+        //     performance: 92,
+        //     experience: 3,
+        //     active: true,
+        //     skills: ["Python", "Spring"]
+        // };
+        // employees.push(newEmployee);
+        // console.log("Updated Employees List:", employees);
+
+        // <!-- <--------------------------------------39 Question---------------------------------> -->
+
+        // const removedEmployee = employees.pop();
+        // console.log("Removed Employee:", removedEmployee);
+
+        // <!-- <--------------------------------------40 Question---------------------------------> -->
+
+        // const copiedEmployees = [...employees];
+        // copiedEmployees.sort((a, b) => b.salary - a.salary);
+        // console.log("Sorted Copied Data (First Person Salary):", copiedEmployees[0].salary);
+        // console.log("Original Data (First Person Salary):", employees[0].salary);
+
+        // <!-- <--------------------------------------41 Question---------------------------------> -->
+
+        const eligibleEmployees = [...employees].filter(emp => emp.active && emp.performance >= 80);
+        const bonusReport = eligibleEmployees.map(emp => {
+            let bonusPercentage = emp.performance >= 95 ? 0.15 : 0.10;
+            let bonusAmount = emp.salary * bonusPercentage;
+            let finalSalary = emp.salary + bonusAmount;
+            return {
+                id: emp.id,
+                name: emp.name,
+                department: emp.department,
+                salary: emp.salary,
+                bonusPercentage: (bonusPercentage * 100) + "%",
+                bonusAmount: bonusAmount,
+                finalSalary: finalSalary
+            };
+        });
+        bonusReport.sort((a, b) => b.salary - a.salary);
+        const tbody = document.getElementById("bonus-tbody");
+        let rowsHtml = "";
+        bonusReport.forEach(emp => {
+            rowsHtml += `
+                <tr>
+                    <td>${emp.id}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.department}</td>
+                    <td>₹${emp.salary.toLocaleString()}</td>
+                    <td>${emp.bonusPercentage}</td>
+                    <td>₹${emp.bonusAmount.toLocaleString()}</td>
+                    <td>₹${emp.finalSalary.toLocaleString()}</td>
+                </tr>
+            `;
+        });
+        tbody.innerHTML = rowsHtml;
+        const totalBonusExpenditure = bonusReport.reduce((sum, emp) => sum + emp.bonusAmount, 0);
+        const highestBonusEmployee = bonusReport.reduce((max, emp) => {
+            return emp.bonusAmount > max.bonusAmount ? emp : max;
+        }, bonusReport[0]);
+        document.getElementById("total-bonus").innerText = "₹" + totalBonusExpenditure.toLocaleString();
+        document.getElementById("highest-bonus").innerText = `${ highestBonusEmployee.name } (${ highestBonusEmployee.department }) - ₹${ highestBonusEmployee.bonusAmount.toLocaleString() }`;
+
+    </script>
+</body>
+
+</html>
