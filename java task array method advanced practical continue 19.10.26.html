@@ -48,7 +48,10 @@
             color: white;
         }
     </style> -->
-    <style>
+
+    <!-- <-------------------------------------- Question 41--------------------------------------->
+
+    <!-- <style>
         * {
             margin: 0px;
             padding: 0px;
@@ -103,9 +106,9 @@
             margin-bottom: 8px;
             color: #333;
         }
-    </style>
+    </style> -->
 
-    <!-- <--------------------------------------3 Question------------------------------------- -->
+
 
 </head>
 
@@ -151,10 +154,10 @@
         </tbody>
     </table> -->
 
-    <!-- -------------------------------------41 Question----------------------------------- -->
+    <!-- -------------------------------------42 Question----------------------------------- -->
 
 
-    <h1>Employee Bonus Report & Payroll Optimization</h1>
+    <!-- <h1>Employee Bonus Report & Payroll Optimization</h1>
     <table id="bonus-table">
         <thead>
             <tr>
@@ -176,7 +179,7 @@
     <div class="summary-box" id="summary-section">
         <p><b>Total Bonus Expenditure:</b> <span id="total-bonus"></span></p>
         <p><b>Highest Bonus Employee:</b> <span id="highest-bonus"></span></p>
-    </div>
+    </div> -->
 
     <script>
         const employees = [
@@ -280,44 +283,125 @@
 
         // <!-- <--------------------------------------41 Question---------------------------------> -->
 
-        const eligibleEmployees = [...employees].filter(emp => emp.active && emp.performance >= 80);
-        const bonusReport = eligibleEmployees.map(emp => {
-            let bonusPercentage = emp.performance >= 95 ? 0.15 : 0.10;
-            let bonusAmount = emp.salary * bonusPercentage;
-            let finalSalary = emp.salary + bonusAmount;
+        // const eligibleEmployees = [...employees].filter(emp => emp.active && emp.performance >= 80);
+        // const bonusReport = eligibleEmployees.map(emp => {
+        //     let bonusPercentage = emp.performance >= 95 ? 0.15 : 0.10;
+        //     let bonusAmount = emp.salary * bonusPercentage;
+        //     let finalSalary = emp.salary + bonusAmount;
+        //     return {
+        //         id: emp.id,
+        //         name: emp.name,
+        //         department: emp.department,
+        //         salary: emp.salary,
+        //         bonusPercentage: (bonusPercentage * 100) + "%",
+        //         bonusAmount: bonusAmount,
+        //         finalSalary: finalSalary
+        //     };
+        // });
+        // bonusReport.sort((a, b) => b.salary - a.salary);
+        // const tbody = document.getElementById("bonus-tbody");
+        // let rowsHtml = "";
+        // bonusReport.forEach(emp => {
+        //     rowsHtml += `
+        //         <tr>
+        //             <td>${emp.id}</td>
+        //             <td>${emp.name}</td>
+        //             <td>${emp.department}</td>
+        //             <td>₹${emp.salary.toLocaleString()}</td>
+        //             <td>${emp.bonusPercentage}</td>
+        //             <td>₹${emp.bonusAmount.toLocaleString()}</td>
+        //             <td>₹${emp.finalSalary.toLocaleString()}</td>
+        //         </tr>
+        //     `;
+        // });
+        // tbody.innerHTML = rowsHtml;
+        // const totalBonusExpenditure = bonusReport.reduce((sum, emp) => sum + emp.bonusAmount, 0);
+        // const highestBonusEmployee = bonusReport.reduce((max, emp) => {
+        //     return emp.bonusAmount > max.bonusAmount ? emp : max;
+        // }, bonusReport[0]);
+        // document.getElementById("total-bonus").innerText = "₹" + totalBonusExpenditure.toLocaleString();
+        // document.getElementById("highest-bonus").innerText = `${ highestBonusEmployee.name } (${ highestBonusEmployee.department }) - ₹${ highestBonusEmployee.bonusAmount.toLocaleString() }`;
+
+        // <!-- <--------------------------------------42 Question---------------------------------> -->
+
+        let Total_emp_count = employees.length;
+        console.log(Total_emp_count);
+
+        let active_Inactive_count = employees => {
+            const active_count = employees.filter((val) => val.active).length;
+            const inactive_count = Total_emp_count - active_count
             return {
-                id: emp.id,
-                name: emp.name,
-                department: emp.department,
-                salary: emp.salary,
-                bonusPercentage: (bonusPercentage * 100) + "%",
-                bonusAmount: bonusAmount,
-                finalSalary: finalSalary
-            };
+                active_count: active_count, inactive_count: inactive_count
+            }
+        };
+        console.log(active_Inactive_count);
+
+        let Total_payroll = employees.reduce((sum, val) => sum + val.salary, 0);
+        console.log(Total_payroll);
+
+        let Total_annual_pyroll_active_emp = employees.filter((val) => val.active).reduce((sum, val) => sum + val.salary, 0) * 12;
+        console.log(Total_annual_pyroll_active_emp);
+
+        let Average_Salary = Total_payroll / employees.length;
+        console.log(Average_Salary);
+
+        let highest_paid_emp = employees => {
+            sort_salary = employees.sort((a, b) => b.salary - a.salary);
+            return { Highest_paid_employee: sort_salary[0] }
+        }
+        console.log(highest_paid_emp(employees));
+
+        let Lowest_paid_emp = employees => {
+            sort_salary = employees.sort((a, b) => a.salary - b.salary);
+            return { Lowest_paid_employee: sort_salary[0] }
+        }
+        console.log(Lowest_paid_emp(employees));
+
+        let Top_three_performer = employees.sort((a, b) => b.performance - a.performance).slice(0, 3);
+        console.log(Top_three_performer);
+
+        let department_payroll = {};
+        employees.forEach(val => {
+            let dept = val.department;
+            let salary = val.salary;
+            if (department_payroll[dept]) {
+                department_payroll[dept] = department_payroll[dept] + salary;
+            }
+            else {
+                department_payroll[dept] = salary;
+            }
         });
-        bonusReport.sort((a, b) => b.salary - a.salary);
-        const tbody = document.getElementById("bonus-tbody");
-        let rowsHtml = "";
-        bonusReport.forEach(emp => {
-            rowsHtml += `
-                <tr>
-                    <td>${emp.id}</td>
-                    <td>${emp.name}</td>
-                    <td>${emp.department}</td>
-                    <td>₹${emp.salary.toLocaleString()}</td>
-                    <td>${emp.bonusPercentage}</td>
-                    <td>₹${emp.bonusAmount.toLocaleString()}</td>
-                    <td>₹${emp.finalSalary.toLocaleString()}</td>
-                </tr>
-            `;
+        console.log(department_payroll);
+
+        let Total_bonus_expenditure = employees => {
+            return employees.filter((val, ind, arr) => val.active).map((val, ind, arr) => {
+                return {
+                    Name: val.name,
+                    Bonus: val.salary * (10 / 100)
+                };
+            }).reduce((sum, val) => sum + val.Bonus, 0);
+        };
+        console.log(Total_bonus_expenditure(employees));
+
+        let emp_req_Performance_Improvement = employees.filter((val) => val.performance < 70);
+        console.log(emp_req_Performance_Improvement);
+
+        let allSkills = [];
+        employees.forEach(val => {
+            if (val.skills && val.skills !== undefined) {
+                val.skills.forEach(skill => {
+                    if (!allSkills.includes(skill)) {
+                        allSkills.push(skill);
+                    }
+                });
+            }
         });
-        tbody.innerHTML = rowsHtml;
-        const totalBonusExpenditure = bonusReport.reduce((sum, emp) => sum + emp.bonusAmount, 0);
-        const highestBonusEmployee = bonusReport.reduce((max, emp) => {
-            return emp.bonusAmount > max.bonusAmount ? emp : max;
-        }, bonusReport[0]);
-        document.getElementById("total-bonus").innerText = "₹" + totalBonusExpenditure.toLocaleString();
-        document.getElementById("highest-bonus").innerText = `${ highestBonusEmployee.name } (${ highestBonusEmployee.department }) - ₹${ highestBonusEmployee.bonusAmount.toLocaleString() }`;
+        const uniqueSkillsReport = {
+            uniqueSkillsCount: allSkills.length,
+            uniqueSkillsList: allSkills
+        };
+        console.log("Unique Skills Report:", uniqueSkillsReport);
+        console.log("Unique Skills Count:", uniqueSkillsReport.uniqueSkillsCount);
 
     </script>
 </body>
