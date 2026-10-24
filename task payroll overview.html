@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .maincon {
+            background-color: whitesmoke;
+            /* background-color: aqua; */
+            width: 1300px;
+            min-height: 500px;
+            margin: 20px auto;
+            border: 1px solid grey;
+            border-radius: 15px;
+            display: flex
+        }
+
+        .leftcon {
+            background-color: whitesmoke;
+            /* background-color: rgb(111, 111, 216); */
+            width: 20%;
+            height: 100%;
+            border-top-left-radius: 15px;
+            border: 1px solid grey;
+        }
+
+        .headcon {
+            background-color: whitesmoke;
+            /* background-color: blueviolet; */
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid grey;
+            border-right: 1px solid grey;
+            border-top-left-radius: 15px;
+            padding: 10px 15px;
+        }
+
+        .leadInc-con {
+            width: 90%;
+            height: 40px;
+            /* background-color: brown; */
+            display: flex;
+            margin-top: 15px;
+            border-radius: 10px;
+            margin-left: 13px;
+            border: 1px solid grey;
+            align-items: center;
+        }
+
+        .icon1 {
+            margin-left: 15px;
+        }
+
+        .leadInc-con span {
+            margin-left: 10px;
+        }
+
+        .icon2 {
+            margin-left: 85px;
+        }
+
+        .mainmenu {
+            background-color: whitesmoke;
+            /* background-color: chartreuse; */
+            width: 100%;
+            height: 330px;
+            padding: 5px 10px;
+        }
+
+        .menuheading {
+            font-size: 13px;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+
+        .dash {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .emp {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .attendance {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .recruit {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .payroll {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+            border-radius: 10px;
+            background-color: rgb(203, 206, 247);
+            width: 225px;
+            padding: 10px 15px;
+            margin-left: 10px;
+            color: #0c6af8;
+        }
+
+        .performance {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .report {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .othercon {
+            background-color: whitesmoke;
+            /* background-color: rgb(226, 153, 43); */
+            width: 100%;
+            height: 130px;
+            padding: 5px 10px;
+        }
+
+        .otherheading {
+            font-size: 13px;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+
+        .setting {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .help {
+            display: flex;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .upgradecon {
+            background-color: whitesmoke;
+            /* background-color: orange; */
+            width: 92%;
+            height: 170px;
+            padding: 15px 15px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            margin-left: 10px;
+        }
+
+        .plan {
+            font-size: 15px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .planpara {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .upgrade-button {
+            background-color: blue;
+            color: white;
+            padding: 5px 50px;
+            margin-top: 10px;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+
+
+        /* -----------------------------------Right Container-------------------------------------- */
+
+        .rightcon {
+            background-color: whitesmoke;
+            /* background-color: rgb(17, 194, 135); */
+            width: 80%;
+            height: 100%;
+            border-top-right-radius: 15px;
+            border: 1px solid grey;
+
+        }
+
+        nav {
+            background-color: whitesmoke;
+            /* background-color: crimson; */
+            width: 100%;
+            height: 40px;
+            border: 1px solid grey;
+            border-top-right-radius: 15px;
+            display: flex;
+        }
+
+        .ul {
+            display: flex;
+            list-style-type: none;
+            gap: 20px;
+            padding: 10px 20px;
+
+        }
+
+        .link {
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: blue;
+        }
+
+        .link::after {
+            background-color: blue;
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .link:hover::after {
+            width: 100%;
+        }
+
+        .navcon1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navimg {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-left: 10px;
+            border-left: 1px solid grey;
+
+        }
+
+        .navicon1 {
+            margin-left: 270px;
+            padding: 0px 5px;
+            border-left: 1px solid grey;
+        }
+
+        .navicon2 {
+            padding: 0px 10px;
+            border-left: 1px solid grey;
+            border-right: 1px solid grey;
+
+        }
+
+        .navicon3 {
+            font-size: 10px;
+        }
+
+        .navname {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        /* ------------------------------Right-sub-container------------------------------------------------ */
+
+        .rightsubcon {
+            background-color: whitesmoke;
+            /* background-color: darkgreen; */
+            width: 100%;
+            min-height: 500px;
+            padding: 10px 20px;
+        }
+
+        .payrolloverview {
+            background-color: whitesmoke;
+            /* background-color: chartreuse; */
+            width: 100%;
+            height: 35px;
+            display: flex;
+        }
+
+        .payhead {
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .paydate,
+        .payexport,
+        .addpay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid grey;
+            width: 180px;
+            height: 30px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .payrollcon {
+            gap: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 310px;
+        }
+
+        .paragraph {
+            background-color: whitesmoke;
+            /* background-color: blueviolet; */
+            width: 100%;
+            height: 50px;
+            border: 1px solid grey;
+            font-size: 13px;
+            margin-top: 5px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0px 5px;
+        }
+
+        .totalpayroll {
+            background-color: whitesmoke;
+            /* background-color: chocolate; */
+            width: 100%;
+            height: 70px;
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .subcon1 {
+            background-color: whitesmoke;
+            /* background-color: aqua; */
+            width: 380px;
+            height: 70px;
+        }
+
+        .subhead1 {
+            font-size: 13px;
+        }
+
+        .dollor1 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-top: 5px;
+            margin-left: -8px;
+        }
+        .subcon1{
+            border-right: 1px solid grey;
+
+        }
+        .subcon1 span {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .subcon2 {
+            background-color: whitesmoke;
+            /* background-color: rgb(164, 214, 27); */
+            width: 400px;
+            height: 70px;
+            padding: 0px 20px;
+            border-right: 1px solid grey;
+
+        }
+        .subhead2 {
+            font-size: 13px;
+        }
+
+        .dollor2 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .subcon2 span {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .subcon3 {
+            background-color: whitesmoke;
+            /* background-color: rgb(206, 43, 157); */
+            width: 350px;
+            height: 70px;
+            padding: 0px 20px;
+        }
+
+        .subhead3 {
+            font-size: 13px;
+        }
+
+        .dollor3 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-top: 5px;
+            margin-left: -7px;
+        }
+
+        .subcon3 span {
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* --------------------------------Graph Part--------------------------------------------- */
+
+        .mainchartcontentcon {
+            display: flex;
+        }
+
+        .rightsubcon1 {
+            background-color: whitesmoke;
+            /* background-color: rgb(240, 176, 153); */
+            width: 50%;
+            height: 340px;
+            padding: 20px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid grey;
+
+        }
+
+        .span1 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .span2 {
+            /* background-color: rgb(187, 184, 184); */
+            margin-left: 160px;
+            font-size: 12px;
+            padding: 2px 10px;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+        .chart1-dollar {
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .blackcon {
+            background-color: black;
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            padding: 5px 10px;
+            display: flex;
+            color: rgb(198, 200, 202);
+            font-size: 8px;
+            margin-left: 100px;
+            margin-top: 15px;
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            height: 200px;
+
+        }
+
+        .chart-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .point {
+            width: 10px;
+            height: 10px;
+            background-color: #4a72ff;
+            border-radius: 50%;
+            margin-left: 65px;
+            margin-top: 10px;
+    
+        }
+
+        .dashed-line {
+            display: flex;
+            gap: 50px;
+            margin-left: 20px;
+            height: 111px;
+            border-left: 2px solid #a0aec0;
+        }
+
+        .month {
+            margin-left: 30px;
+            margin-top: -70px;
+            border-top: 1px solid grey;
+            display: flex;
+            gap: 55px;
+            font-size: 12px;
+            color: #4a72ff;
+        }
+
+        /* .slant-line {
+            position: absolute;
+            width: 50px;            
+            height: 2px;            
+            background-color: #4a72ff;
+            transform: rotate(-20deg);
+           margin-left: -130px;
+           margin-top: 20px;
+        } */
+
+        /* ---------------------------------Bar Chart--------------------------------------------- */
+
+        .leftsubcon1 {
+            /* background-color: rgb(233, 109, 64); */
+            width: 49%;
+            height: 340px;
+            padding: 20px 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 10px;
+            border: 1px solid grey;
+            
+        }
+
+        .span3 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .chart2-dollar {
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .ul-gender {
+            list-style-type: none;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 320px;
+            margin-top: -15px;
+            display: flex;
+        }
+
+        .li-gender {
+            position: relative;
+            padding: 0px 20px;
+            /* margin-left: 10px;
+            gap: 10px; */
+        }
+
+        .li-gender::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            background-color: #8faadc;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            /* gap: 10px; */
+        }
+
+        .salary-dot::before {
+            background-color: rgb(255, 142, 144);
+        }
+
+        .barcon {
+            /* background-color: #71bbf8; */
+            width: 90%;
+            height: 170px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-direction: row;
+            border-bottom: 1px solid grey;
+        }
+
+        .bars {
+            /* width: 25px;
+            height: 50px; */
+            background-color: #0c6af8;
+            border-radius: 5px;
+        }
+
+        .dep {
+            display: flex;
+            margin-left: 30px;
+            gap: 30px;
+            font-size: 13px;
+            margin-top: -10px;
+
+        }
+
+        .formcon {
+            /* background-color: aqua; */
+            width: 100%;
+            height: 150px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-top: 10px;
+            border: 1px solid #a0aec0;
+
+        }
+
+        .form1 {
+            height: 50px;
+            display: flex;
+            border-bottom: 1px solid grey;
+            gap: 10px;
+        }
+
+        .formcon .search {
+            border: 1px solid grey;
+            margin-left: 100px;
+            padding: 5px 10px;
+            width: 200px;
+            height: 30px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+
+        }
+
+        .formcon .select {
+            border: 1px solid grey;
+            padding: 5px 10px;
+            width: 200px;
+            height: 30px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .formcon .status {
+            width: 150px;
+            height: 30px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding: 5px 10px;
+
+        }
+
+        .form2 {
+            background-color: #a0aec0;
+            height: 30px;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid grey;
+            gap: 10px;
+            padding: 8px 0px;
+            /* margin-top: 10px; */
+            font-size: 13px;
+        }
+
+        .box {
+            border: 1px solid grey;
+            width: 10px;
+            height: 10px;
+        }
+        .form3 {
+            width: 100%;
+            background-color: #ebeef3;
+            /* height: 30px; */
+            display: flex;
+            /* justify-content: space-between; */
+            border-bottom: 1px solid grey;
+            gap: 50px;
+            padding: 8px 0px;
+            /* margin-top: 10px; */
+            font-size: 13px;
+            padding: 20px 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maincon">
+        <div class="leftcon">
+            <div class="headcon">
+                <h1 style="font-size: 20px;"> <i style="color: blue;" class="fa-solid fa-snowflake"></i> Humaine</h1>
+            </div>
+            <div class="leadInc-con">
+                <div class="icon1"><i class="fa-solid fa-arrows-rotate"></i></div>
+
+                <span>Lead Inc.</span>
+                <div class="icon2"><i class="fa-solid fa-angles-down"></i></div>
+            </div>
+            <div class="mainmenu">
+                <div class="menuheading">MAIN MENU</div>
+                <div class="dash">
+                    <div><i class="fa-solid fa-house"></i></div>
+                    <span>Dashboard</span>
+                </div>
+                <div class="emp">
+                    <div><i class="fa-solid fa-users-rays"></i></div>
+                    <span>Employee Directory</span>
+                </div>
+                <div class="attendance">
+                    <div><i class="fa-solid fa-clipboard"></i></div>
+                    <span>Attendance & Leave</span>
+                </div>
+                <div class="recruit">
+                    <div><i class="fa-solid fa-briefcase"></i></div>
+                    <span>Recruitment</span>
+                </div>
+                <div class="payroll">
+                    <div><i class="fa-solid fa-sack-dollar"></i></div>
+                    <span>Payroll</span>
+                </div>
+                <div class="performance">
+                    <div><i class="fa-solid fa-chart-simple"></i></div>
+                    <span>Performance</span>
+                </div>
+                <div class="report">
+                    <div><i class="fa-solid fa-diagram-project"></i></div>
+                    <span>Report & Analytics</span>
+                </div>
+            </div>
+            <div class="othercon">
+                <div class="otherheading">OTHER</div>
+                <div class="setting">
+                    <div><i class="fa-solid fa-gear"></i></div>
+                    <span>Settings</span>
+                </div>
+                <div class="help">
+                    <div><i class="fa-solid fa-circle-question"></i></div>
+                    <span>Help Center</span>
+                </div>
+            </div>
+            <div class="upgradecon">
+                <div style="color: blue;"><i class="fa-solid fa-crown"></i></div>
+                <div class="plan">
+                    <p>Upgrade to Premium Plan</p>
+                </div>
+                <div class="planpara">
+                    <p>Unlock advanced AI analytics, priority support and exculsive HR tolls.</p>
+                </div>
+                <div class="upgrade-button">Upgrade Now</div>
+            </div>
+        </div>
+        <div class="rightcon">
+            <nav>
+                <ul class="ul">
+                    <li> <a href="" class="link">Overview</a> </li>
+                    <li> <a href="" class="link">Employee List</a></li>
+                    <li> <a href="" class="link">Organizatioin Chart</a></li>
+                    <li> <a href="" class="link">Employee Profiles</a></li>
+                </ul>
+                <div class="navcon1">
+                    <div class="navicon1"><i class="fa-solid fa-bell"></i></div>
+                    <div class="navicon2"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div><img class="navimg" src="./images/photo ai.jpg" alt=""></div>
+                    <div class="navname">Abinaya</div>
+                    <div class="navicon3"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+            </nav>
+            <div class="rightsubcon">
+                <div class="payrolloverview">
+                    <div class="payhead">Payroll Overview</div>
+                    <div class="payrollcon">
+                        <div class="paydate">
+                            <div><i class="fa-solid fa-calendar"></i> </div>
+                            <div>27 Feb-27 Mar 2025</div>
+                            <div><i class="fa-solid fa-chevron-down"></i></div>
+                        </div>
+                        <div class="payexport" style="width: 150px;">
+                            <div><i class="fa-solid fa-upload"></i></div>
+                            <div>Export payroll</div>
+                        </div>
+                        <div style="color: white; background-color: blue;" class="addpay">
+                            <div><i class="fa-solid fa-plus"></i></div>
+                            <div>Add a New Payroll</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <div><i style="color: rgb(236, 236, 240); " class="fa-solid fa-circle-info"></i></div>
+                    <p>Heads up! Payroll is due in 3 days. Please ensure all employee data, attendance logs, and bonuses
+                        are finalized before April 17, 2025 to avoid delays in payment processing.</p>
+                </div>
+                <div class="totalpayroll">
+                    <div class="subcon1">
+                        <div class="subhead1"><i class="fa-solid fa-users-rays"></i> Total payroll This Month</div>
+                        <div class="dollor1"><i class="fa-solid fa-dollar-sign"></i>273,500 </div>
+                        <span style="color: rgb(1, 245, 131);">+ 8.2% </span><span>from last month</span>
+                    </div>
+                    <div class="subcon2">
+                        <div class="subhead2"><i class="fa-solid fa-user-plus"></i> Total Employee Paid</div>
+                        <div class="dollor2">134</div>
+                        <span style="color: rgb(1, 245, 131);">+ 3 </span><span>from last month</span>
+                    </div>
+                    <div class="subcon3">
+                        <div class="subhead3"><i class="fa-solid fa-circle-check"></i> Average Salary</div>
+                        <div class="dollor3"><i class="fa-solid fa-dollar-sign"></i>3,632</div>
+                        <span style="color: rgb(1, 245, 131);">+$94</span> <span> from last month</span>
+                    </div>
+                </div>
+                <div class="mainchartcontentcon">
+                    <div class="rightsubcon1">
+                        <span class="span1">Monthly Payroll trend</span> <span class="span2">Last 6 months <i
+                                class="fa-solid fa-chevron-down"></i></span>
+                        <div class="chart1-dollar">$269,700</div>
+                        <span
+                            style="font-size: 13px; color:rgb(1, 245, 131); margin-top: 10px; display: inline-block;">+2.4%</span>
+                        <span style="font-size: 13px; margin-top: 10px; display: inline-block;">from last year</span>
+
+                        <div class="blackcon">
+                            <div
+                                style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background-color: rgb(29, 28, 28);  ">
+                                <i style="color: aliceblue;" class="fa-regular fa-thumbs-up"></i>
+                            </div>
+                            <div class="blackconp">
+                                <div style="margin-left: 20px;">$340,360</div>
+                                <div style="margin-top: 5px;"><span
+                                        style="color: green; margin-left: 20px;">-2.5%</span><span
+                                        style="margin-left: 5px;">form pervious month</span></div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-column">
+                                <div class="point"></div>
+                                <div class="slant-line1"></div>
+                                <div class="dashed-line"></div>
+
+                            </div>
+                            <div class="chart-column">
+                                <div class="point"></div>
+                                <div class="slant-line1"></div>
+                                <div class="dashed-line"></div>
+                            </div>
+                            <div class="chart-column">
+                                <div class="point"></div>
+                                <div class="slant-line2"></div>
+
+                                <div class="dashed-line"></div>
+                            </div>
+                            <div class="chart-column">
+                                <div class="point"></div>
+                                <div class="slant-line3"></div>
+
+                                <div class="dashed-line"></div>
+                            </div>
+                            <div class="chart-column">
+                                <div class="point"></div>
+                                <div class="slant-line4"></div>
+
+                                <div class="dashed-line"></div>
+                            </div>
+                            <div class="chart-column">
+                                <div class="point"></div>
+                                <div class="slant-line5"></div>
+
+                                <div class="dashed-line"></div>
+                            </div>
+
+                        </div>
+                        <div class="month">
+                            <div class="label">Oct</div>
+                            <div class="label">Nov</div>
+                            <div class="label">Dec</div>
+                            <div class="label">Jan</div>
+                            <div class="label">Feb</div>
+                            <div class="label">Mar</div>
+                        </div>
+                    </div>
+                    <div class="leftsubcon1">
+                        <div class="span3">Payroll Distribution by Department</div>
+                        <div class="chart2-dollar">$273,500</div>
+                        <span
+                            style="font-size: 13px; color:rgb(1, 245, 131); margin-top: 10px; display: inline-block;">+2.4%</span>
+                        <span style="font-size: 13px; margin-top: 10px; display: inline-block;">from last year</span>
+                        <div class="gender">
+                            <ul class="ul-gender">
+                                <li class="salary-dot">Salary</li>
+                                <li class="li-gender">Bonus</li>
+                            </ul>
+                        </div>
+                        <div class="barcon">
+                            <div style="width: 25px; height: 140px;" class="bars"></div>
+                            <div style="width: 25px; height: 100px;" class="bars"></div>
+                            <div style="width: 25px; height: 120px;" class="bars"></div>
+                            <div style="width: 25px; height: 80px;" class="bars"></div>
+                            <div style="width: 25px; height: 110px;" class="bars"> </div>
+                            <div style="width: 25px; height: 130px;" class="bars"></div>
+                        </div>
+                        <div class="dep">
+                            <div class="depname">IT</div>
+                            <div class="depname">Marketing</div>
+                            <div class="depname">Finance</div>
+                            <div class="depname">Operation</div>
+                            <div class="depname">HR</div>
+                            <div class="depname">Others</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="formcon">
+                    <div class="form1">
+                        <div
+                            style="font-size: 15px; font-weight: 600; margin-left: 10px; margin-top: 20px; width: 300px;">
+                            Payroll List</div>
+                        <div class="search"><i class="fa-solid fa-magnifying-glass"></i>Search employee</div>
+                        <div class="select">Select department<i class="fa-solid fa-angle-down"></i></div>
+                        <div class="status">Status <i class="fa-solid fa-angle-down"></i></div>
+                    </div>
+                    <div class="form2">
+                        <div class="box"></div>
+                        <div>Name</div>
+                        <div>Department</div>
+                        <div> Pay Date</div>
+                        <div>Status</div>
+                        <div>Base Salary</div>
+                        <div>Bonusses</div>
+                        <div>Total Salary</div>
+                        <div>Action</div>
+                    </div>
+                    <div class="form3">
+                        <div class="box"></div>
+                        <div><img class="navimg" src="./images/photo ai.jpg" alt="">Abinaya</div>
+                        <div>Marketing</div>
+                        <div> Mar31, 2025</div>
+                        <div style="margin-left: 10px;">paid</div>
+                        <div style="margin-left: 30px;">$4,000</div>
+                        <div style="margin-left: 40px;">$500</div>
+                        <div style="margin-left: 50px;">$4,500</div>
+                        <div style="margin-left: 50px;"> i</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
