@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management & Performance Analytics | MGI-FE-PROJ-01</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <strong>MrGenie Institute</strong>
+        <small>MGI-FE-PROJ-01</small>0
+        <p>Student Management & Performance Analytics</p>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><button type="button" class="nav-link active" data-page="dashboard">Dashboard</button></li>
+          <li><button type="button" class="nav-link" data-page="students">Students</button></li>
+          <li><button type="button" class="nav-link" data-page="attendance">Attendance</button></li>
+          <li><button type="button" class="nav-link" data-page="tasks">Tasks</button></li>
+          <li><button type="button" class="nav-link" data-page="activities">Activities</button></li>
+          <li><button type="button" class="nav-link" data-page="analysis">Analysis</button></li>
+          <li><button type="button" class="nav-link" data-page="reports">Reports</button></li>
+          <li><button type="button" class="nav-link" data-page="data">Data and About</button></li>
+        </ul>
+      </nav>
+    </aside>
+    <div>
+      <header class="topbar">
+        <button type="button" class="btn ghost menu-toggle" id="menu-toggle" aria-controls="sidebar">Menu</button>
+        <h1 id="page-title">Dashboard</h1>
+        <div class="inline-actions">
+          <button type="button" class="btn ghost" id="theme-toggle">Theme</button>
+          <button type="button" class="btn" id="add-student-btn">Add student</button>
+        </div>
+      </header>
+      <main class="main" id="main" tabindex="-1">
+        <section class="page active" id="page-dashboard" aria-labelledby="page-title">
+          <div id="dashboard-root"></div>
+        </section>
+        <section class="page" id="page-students">
+          <div id="students-root"></div>
+        </section>
+        <section class="page" id="page-profile">
+          <div id="profile-root"></div>
+        </section>
+        <section class="page" id="page-attendance">
+          <div id="attendance-root"></div>
+        </section>
+        <section class="page" id="page-tasks">
+          <div id="tasks-root"></div>
+        </section>
+        <section class="page" id="page-activities">
+          <div id="activities-root"></div>
+        </section>
+        <section class="page" id="page-analysis">
+          <div id="analysis-root"></div>
+        </section>
+        <section class="page" id="page-reports">
+          <div id="reports-root"></div>
+        </section>
+        <section class="page" id="page-data">
+          <div id="data-root"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <div class="dialog-body">
+      <h2 id="confirm-title">Please confirm</h2>
+      <p id="confirm-body"></p>
+      <div id="confirm-extra"></div>
+      <div class="form-actions">
+        <button type="button" class="btn ghost" id="confirm-cancel">Cancel</button>
+        <button type="button" class="btn danger" id="confirm-ok">Confirm</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="student-dialog" aria-labelledby="student-form-title">
+    <form class="dialog-body" id="student-form" novalidate>
+      <h2 id="student-form-title">Add student</h2>
+      <input type="hidden" id="student-editing-id">
+      <div class="grid grid-2">
+        <div class="field">
+          <label for="stu-code">Student ID <span class="required">(required)</span></label>
+          <input id="stu-code" name="studentCode" autocomplete="off">
+          <p class="field-error" id="stu-code-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-name">Full name <span class="required">(required)</span></label>
+          <input id="stu-name" name="fullName">
+          <p class="field-error" id="stu-name-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-phone">Phone <span class="required">(required)</span></label>
+          <input id="stu-phone" name="phone">
+          <p class="field-error" id="stu-phone-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-email">Email (optional)</label>
+          <input id="stu-email" name="email" type="email">
+          <p class="field-error" id="stu-email-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-course">Course <span class="required">(required)</span></label>
+          <select id="stu-course" name="course"></select>
+          <p class="field-error" id="stu-course-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-batch">Batch <span class="required">(required)</span></label>
+          <input id="stu-batch" name="batch">
+          <p class="field-error" id="stu-batch-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-join">Joining date <span class="required">(required)</span></label>
+          <input id="stu-join" name="joiningDate" type="date">
+          <p class="field-error" id="stu-join-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-status">Status</label>
+          <select id="stu-status" name="status"></select>
+          <p class="field-error" id="stu-status-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-progress">Course progress (0–100)</label>
+          <input id="stu-progress" name="courseProgress" type="number" min="0" max="100" step="1" value="0">
+          <p class="field-error" id="stu-progress-error"></p>
+        </div>
+        <div class="field">
+          <label for="stu-address">Address (optional)</label>
+          <textarea id="stu-address" name="address" maxlength="200"></textarea>
+          <p class="field-error" id="stu-address-error"></p>
+        </div>
+      </div>
+      <div class="photo-drop" id="photo-drop">
+        <p>Profile photo (optional). JPEG, PNG or WebP, maximum 2 MB. Drag and drop or choose a file. Nothing is saved until you submit the form.</p>
+        <div id="photo-preview"></div>
+        <label for="stu-photo">Choose image</label>
+        <input id="stu-photo" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
+        <p class="field-error" id="stu-photo-error"></p>
+        <button type="button" class="btn ghost" id="remove-photo">Remove photo</button>
+        <button type="button" class="btn secondary" id="save-without-photo" hidden>Save without photo</button>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn ghost" id="student-cancel">Cancel</button>
+        <button type="submit" class="btn">Save student</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/students.js"></script>
+  <script src="js/attendance.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/activities.js"></script>
+  <script src="js/reports.js"></script>
+  <script src="js/sample-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
