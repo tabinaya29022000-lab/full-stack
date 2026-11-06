@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const arr = ["red", "blue", "black", "green"]
+        // indez = arr.indexOf("orange");
+        // console.log(indez);
+        // index = console.log(arr.indexOf(1));
+
+        // let value = arr.find((val, ind, arr) => val == "green");
+        // console.log(value)
+
+        // const obj = ({ name:"ragu", age:32, gender:"male"},
+        //     { name:"vjiay", age:30, gender:"male"});
+        // console.log(obj);
+        // console.log(obj.name);
+
+
+        //         1. Employee Performance & Bonus Engine
+        // Concept 01
+        // const employees = [
+        //     { name: "Arun", salary: 40000, score: 92, attendance: 96 },
+        //     { name: "Priya", salary: 50000, score: 78, attendance: 98 },
+        //     { name: "Kumar", salary: 35000, score: 88, attendance: 82 },
+        //     { name: "Divya", salary: 45000, score: 95, attendance: 99 },
+        //     { name: "Ravi", salary: 30000, score: 65, attendance: 95 }
+        // ];
+
+        // const eligible=employees.filter((val,ind,arr)=>val.score>=85 && val.attendance>=90).map(val=>({
+        //     name : val.name,
+        //     bonus : val.salary*(val.score >=95 ? 0.15 : 0.10)   // ternary operator true = 15%
+        // }));
+        // console.table(eligible);
+        // console.log(eligible);
+
+
+        //         2. Inventory & Stock Alert System
+        // Concept 02
+        // const products = [
+        //     { name: "Mouse", stock: 4, min: 10, price: 500 },
+        //     { name: "Keyboard", stock: 15, min: 5, price: 900 },
+        //     { name: "Monitor", stock: 2, min: 4, price: 8000 },
+        //     { name: "USB Cable", stock: 0, min: 20, price: 150 }
+        // ];
+
+        // const report = products.map(p => ({
+        //     ...p,
+        //     status: p.stock === 0 ? "OUT OF STOCK" : p.stock < p.min ? "REORDER" : "AVAILABLE",
+        //     reorderCost: Math.max(0, p.min * 2 - p.stock) * p.price
+        // }));
+
+        // const totalReorderCost = report.reduce(
+        //     (total, p) => total + p.reorderCost, 0
+        // );
+
+        // console.table(report);
+        // console.log("Reorder budget:", totalReorderCost);
+
+
+        //         3. Shopping Cart & Discount Engine
+        // Concept 03
+        // const cart = [
+        //     { name: "Laptop", price: 50000, qty: 1 },
+        //     { name: "Mouse", price: 800, qty: 2 },
+        //     { name: "Headset", price: 2000, qty: 1 }
+        // ];
+
+        // const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+        // const discountRate = subtotal >= 50000 ? 0.10 : subtotal >= 10000 ? 0.05 : 0;
+        // const discount = subtotal * discountRate;
+        // const delivery_charge = subtotal - discount >= 5000 ? 0 : 100;
+        // const total = subtotal - discount + delivery_charge;
+
+        // console.log({ subtotal, discount, delivery_charge, total });
+
+
+        //         4. Attendance & Salary Calculation
+        // Concept 04
+        // const staff = [
+        //     { name: "Arun", days: 26, leave: 2, dailyPay: 1000 },
+        //     { name: "Meena", days: 24, leave: 4, dailyPay: 1200 },
+        //     { name: "Karthik", days: 20, leave: 8, dailyPay: 900 },
+        //     { name: "Nila", days: 28, leave: 0, dailyPay: 1100 }
+        // ];
+
+        // const payroll = staff.map(e => {
+        //     const payableDays = Math.max(0, e.days - e.leave);
+        //     const salary = payableDays * e.dailyPay;
+        //     return {
+        //         name: e.name,
+        //         payableDays,
+        //         salary,
+        //         status: payableDays < 22 ? "Review" : "Normal"
+        //     };
+        // });
+        // const totalPayroll = payroll.reduce(
+        //     (sum, e) => sum + e.salary, 0
+        // );
+        // console.table(payroll);
+        // console.log("Total payroll:", totalPayroll);
+
+
+        //         5. Expense Tracker & Budget Control
+        // Concept 05
+
+        // const expenses = [
+        //     { category: "Travel", amount: 5000 },
+        //     { category: "Food", amount: 2500 },
+        //     { category: "Travel", amount: 3000 },
+        //     { category: "Software", amount: 8000 },
+        //     { category: "Food", amount: 1500 }
+        // ];
+        // const budget = {
+        //     Travel: 10000,
+        //     Food: 3500,
+        //     Software: 7000
+        // };
+        // const totals = expenses.reduce((result, item) => {
+        //     result[item.category] = (result[item.category] || 0) + item.amount; // =travel=5000 =>travel=5000+0
+        //     return result;                                                       // food=2500=>travel=5000 + Food=2500
+        // }, {});                                                                  // travel=3000=> travel=8000 + food=2500
+        // const report = Object.entries(totals).map(                               // software=8000 => travel=8000+food=2500+software=8000
+        //     ([category, spent]) => ({                                           // food=1500 => travel=8000 + food=4000 + sopftware =8000
+        //         category,
+        //         spent,
+        //         budget: budget[category] ?? 0,
+        //         exceeded: spent > (budget[category] ?? 0)
+        //     })
+        // );
+
+        // console.table(report);
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
